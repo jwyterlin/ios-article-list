@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58425DA21B4A97FE00461071 /* ArticleTableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DA11B4A97FE00461071 /* ArticleTableview.swift */; };
+		58425DA51B4A984700461071 /* ArticleTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DA41B4A984700461071 /* ArticleTableviewCell.swift */; };
+		58425DA81B4A987800461071 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58425DA71B4A987800461071 /* ArticleTableViewCell.xib */; };
+		58425DAB1B4A989900461071 /* ArticleTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DAA1B4A989900461071 /* ArticleTableViewProtocol.swift */; };
+		58425DAD1B4A9CA800461071 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DAC1B4A9CA800461071 /* Core.swift */; };
+		58425DAF1B4A9CD300461071 /* ArticleContentCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DAE1B4A9CD300461071 /* ArticleContentCtrl.swift */; };
+		58425DB71B4AA00A00461071 /* cheesecakelabsArticle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DB51B4AA00A00461071 /* cheesecakelabsArticle+CoreDataProperties.swift */; };
+		58425DB81B4AA00A00461071 /* cheesecakelabsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DB61B4AA00A00461071 /* cheesecakelabsArticle.swift */; };
+		58425DBA1B4AA17400461071 /* MockApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DB91B4AA17400461071 /* MockApi.swift */; };
+		58425DBC1B4AA76D00461071 /* HomeCtrlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DBB1B4AA76D00461071 /* HomeCtrlTests.swift */; };
 		587DB5331B4A953C00956D85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DB5321B4A953C00956D85 /* AppDelegate.swift */; };
-		587DB5351B4A953C00956D85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DB5341B4A953C00956D85 /* ViewController.swift */; };
 		587DB5381B4A953C00956D85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587DB5361B4A953C00956D85 /* Main.storyboard */; };
 		587DB53B1B4A953C00956D85 /* cheesecakelabs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 587DB5391B4A953C00956D85 /* cheesecakelabs.xcdatamodeld */; };
 		587DB53D1B4A953C00956D85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587DB53C1B4A953C00956D85 /* Assets.xcassets */; };
 		587DB5401B4A953C00956D85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587DB53E1B4A953C00956D85 /* LaunchScreen.storyboard */; };
-		587DB54B1B4A953D00956D85 /* cheesecakelabsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DB54A1B4A953D00956D85 /* cheesecakelabsTests.swift */; };
+		587DB54B1B4A953D00956D85 /* ArticleTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DB54A1B4A953D00956D85 /* ArticleTableViewTests.swift */; };
 		587DB5561B4A953D00956D85 /* cheesecakelabsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DB5551B4A953D00956D85 /* cheesecakelabsUITests.swift */; };
+		58DD1BE21B4A966D005FACE9 /* ArticleListCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DD1BE11B4A966D005FACE9 /* ArticleListCtrl.swift */; };
+		58DD1BE51B4A9694005FACE9 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DD1BE41B4A9694005FACE9 /* Api.swift */; };
+		E0C319752552C2C3DD0F9122 /* Pods_cheesecakelabs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5710F4BE07B0C9C1C3EF149D /* Pods_cheesecakelabs.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +47,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		196C40EBF58631A8B31AEB35 /* Pods-cheesecakelabs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cheesecakelabs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cheesecakelabs/Pods-cheesecakelabs.debug.xcconfig"; sourceTree = "<group>"; };
+		5710F4BE07B0C9C1C3EF149D /* Pods_cheesecakelabs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cheesecakelabs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58425DA11B4A97FE00461071 /* ArticleTableview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableview.swift; sourceTree = "<group>"; };
+		58425DA41B4A984700461071 /* ArticleTableviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableviewCell.swift; sourceTree = "<group>"; };
+		58425DA71B4A987800461071 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
+		58425DAA1B4A989900461071 /* ArticleTableViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewProtocol.swift; sourceTree = "<group>"; };
+		58425DAC1B4A9CA800461071 /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		58425DAE1B4A9CD300461071 /* ArticleContentCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleContentCtrl.swift; sourceTree = "<group>"; };
+		58425DB51B4AA00A00461071 /* cheesecakelabsArticle+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "cheesecakelabsArticle+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		58425DB61B4AA00A00461071 /* cheesecakelabsArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cheesecakelabsArticle.swift; sourceTree = "<group>"; };
+		58425DB91B4AA17400461071 /* MockApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockApi.swift; sourceTree = "<group>"; };
+		58425DBB1B4AA76D00461071 /* HomeCtrlTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCtrlTests.swift; sourceTree = "<group>"; };
 		587DB52F1B4A953C00956D85 /* cheesecakelabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cheesecakelabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587DB5321B4A953C00956D85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		587DB5341B4A953C00956D85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		587DB5371B4A953C00956D85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		587DB53A1B4A953C00956D85 /* cheesecakelabs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cheesecakelabs.xcdatamodel; sourceTree = "<group>"; };
 		587DB53C1B4A953C00956D85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		587DB53F1B4A953C00956D85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		587DB5411B4A953C00956D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587DB5461B4A953D00956D85 /* cheesecakelabsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cheesecakelabsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		587DB54A1B4A953D00956D85 /* cheesecakelabsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cheesecakelabsTests.swift; sourceTree = "<group>"; };
+		587DB54A1B4A953D00956D85 /* ArticleTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewTests.swift; sourceTree = "<group>"; };
 		587DB54C1B4A953D00956D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587DB5511B4A953D00956D85 /* cheesecakelabsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cheesecakelabsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		587DB5551B4A953D00956D85 /* cheesecakelabsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cheesecakelabsUITests.swift; sourceTree = "<group>"; };
 		587DB5571B4A953D00956D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58DD1BE11B4A966D005FACE9 /* ArticleListCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListCtrl.swift; sourceTree = "<group>"; };
+		58DD1BE41B4A9694005FACE9 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		FBE8D28F3D6F44A14BEF0693 /* Pods-cheesecakelabs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cheesecakelabs.release.xcconfig"; path = "Pods/Target Support Files/Pods-cheesecakelabs/Pods-cheesecakelabs.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0C319752552C2C3DD0F9122 /* Pods_cheesecakelabs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +103,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58425DA31B4A983700461071 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				58425DA11B4A97FE00461071 /* ArticleTableview.swift */,
+				58425DA41B4A984700461071 /* ArticleTableviewCell.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		58425DA61B4A986100461071 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				58425DA71B4A987800461071 /* ArticleTableViewCell.xib */,
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
+		58425DA91B4A989100461071 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				58425DAA1B4A989900461071 /* ArticleTableViewProtocol.swift */,
+			);
+			name = protocol;
+			sourceTree = "<group>";
+		};
+		58425DB01B4A9EFB00461071 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				58425DB51B4AA00A00461071 /* cheesecakelabsArticle+CoreDataProperties.swift */,
+				58425DB61B4AA00A00461071 /* cheesecakelabsArticle.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		587DB5261B4A953C00956D85 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +144,8 @@
 				587DB5491B4A953D00956D85 /* cheesecakelabsTests */,
 				587DB5541B4A953D00956D85 /* cheesecakelabsUITests */,
 				587DB5301B4A953C00956D85 /* Products */,
+				69F5228256553490388999F1 /* Pods */,
+				BADF178A6635E89E9CC3D7D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,11 +162,16 @@
 		587DB5311B4A953C00956D85 /* cheesecakelabs */ = {
 			isa = PBXGroup;
 			children = (
+				58425DB01B4A9EFB00461071 /* model */,
+				58425DA91B4A989100461071 /* protocol */,
+				58DD1BE31B4A968A005FACE9 /* manager */,
+				58425DA61B4A986100461071 /* xib */,
+				58425DA31B4A983700461071 /* view */,
+				58DD1BE01B4A9656005FACE9 /* controller */,
 				587DB5321B4A953C00956D85 /* AppDelegate.swift */,
-				587DB5341B4A953C00956D85 /* ViewController.swift */,
 				587DB5361B4A953C00956D85 /* Main.storyboard */,
-				587DB53C1B4A953C00956D85 /* Assets.xcassets */,
 				587DB53E1B4A953C00956D85 /* LaunchScreen.storyboard */,
+				587DB53C1B4A953C00956D85 /* Assets.xcassets */,
 				587DB5411B4A953C00956D85 /* Info.plist */,
 				587DB5391B4A953C00956D85 /* cheesecakelabs.xcdatamodeld */,
 			);
@@ -113,8 +181,10 @@
 		587DB5491B4A953D00956D85 /* cheesecakelabsTests */ = {
 			isa = PBXGroup;
 			children = (
-				587DB54A1B4A953D00956D85 /* cheesecakelabsTests.swift */,
+				58425DBB1B4AA76D00461071 /* HomeCtrlTests.swift */,
+				587DB54A1B4A953D00956D85 /* ArticleTableViewTests.swift */,
 				587DB54C1B4A953D00956D85 /* Info.plist */,
+				58425DB91B4AA17400461071 /* MockApi.swift */,
 			);
 			path = cheesecakelabsTests;
 			sourceTree = "<group>";
@@ -128,6 +198,41 @@
 			path = cheesecakelabsUITests;
 			sourceTree = "<group>";
 		};
+		58DD1BE01B4A9656005FACE9 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				58425DAE1B4A9CD300461071 /* ArticleContentCtrl.swift */,
+				58DD1BE11B4A966D005FACE9 /* ArticleListCtrl.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		58DD1BE31B4A968A005FACE9 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				58DD1BE41B4A9694005FACE9 /* Api.swift */,
+				58425DAC1B4A9CA800461071 /* Core.swift */,
+			);
+			name = manager;
+			sourceTree = "<group>";
+		};
+		69F5228256553490388999F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				196C40EBF58631A8B31AEB35 /* Pods-cheesecakelabs.debug.xcconfig */,
+				FBE8D28F3D6F44A14BEF0693 /* Pods-cheesecakelabs.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BADF178A6635E89E9CC3D7D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5710F4BE07B0C9C1C3EF149D /* Pods_cheesecakelabs.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +240,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 587DB55A1B4A953D00956D85 /* Build configuration list for PBXNativeTarget "cheesecakelabs" */;
 			buildPhases = (
+				1CE01C725E42257BBFFFAD28 /* Check Pods Manifest.lock */,
 				587DB52B1B4A953C00956D85 /* Sources */,
 				587DB52C1B4A953C00956D85 /* Frameworks */,
 				587DB52D1B4A953C00956D85 /* Resources */,
+				87B84530ABA569FBDA6AD63D /* Embed Pods Frameworks */,
+				D0F4CA29FBB8E30C50D2D049 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,6 +298,7 @@
 		587DB5271B4A953C00956D85 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Coruja Virtual";
 				TargetAttributes = {
@@ -231,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58425DA81B4A987800461071 /* ArticleTableViewCell.xib in Resources */,
 				587DB5401B4A953C00956D85 /* LaunchScreen.storyboard in Resources */,
 				587DB53D1B4A953C00956D85 /* Assets.xcassets in Resources */,
 				587DB5381B4A953C00956D85 /* Main.storyboard in Resources */,
@@ -253,14 +363,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CE01C725E42257BBFFFAD28 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		87B84530ABA569FBDA6AD63D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cheesecakelabs/Pods-cheesecakelabs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0F4CA29FBB8E30C50D2D049 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cheesecakelabs/Pods-cheesecakelabs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		587DB52B1B4A953C00956D85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				587DB53B1B4A953C00956D85 /* cheesecakelabs.xcdatamodeld in Sources */,
-				587DB5351B4A953C00956D85 /* ViewController.swift in Sources */,
+				58425DB71B4AA00A00461071 /* cheesecakelabsArticle+CoreDataProperties.swift in Sources */,
+				58DD1BE21B4A966D005FACE9 /* ArticleListCtrl.swift in Sources */,
+				58425DAB1B4A989900461071 /* ArticleTableViewProtocol.swift in Sources */,
+				58DD1BE51B4A9694005FACE9 /* Api.swift in Sources */,
+				58425DA21B4A97FE00461071 /* ArticleTableview.swift in Sources */,
+				58425DB81B4AA00A00461071 /* cheesecakelabsArticle.swift in Sources */,
 				587DB5331B4A953C00956D85 /* AppDelegate.swift in Sources */,
+				58425DAD1B4A9CA800461071 /* Core.swift in Sources */,
+				58425DA51B4A984700461071 /* ArticleTableviewCell.swift in Sources */,
+				58425DAF1B4A9CD300461071 /* ArticleContentCtrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +434,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				587DB54B1B4A953D00956D85 /* cheesecakelabsTests.swift in Sources */,
+				58425DBA1B4AA17400461071 /* MockApi.swift in Sources */,
+				58425DBC1B4AA76D00461071 /* HomeCtrlTests.swift in Sources */,
+				587DB54B1B4A953D00956D85 /* ArticleTableViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +568,7 @@
 		};
 		587DB55B1B4A953D00956D85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 196C40EBF58631A8B31AEB35 /* Pods-cheesecakelabs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = cheesecakelabs/Info.plist;
@@ -411,6 +580,7 @@
 		};
 		587DB55C1B4A953D00956D85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBE8D28F3D6F44A14BEF0693 /* Pods-cheesecakelabs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = cheesecakelabs/Info.plist;
@@ -422,6 +592,7 @@
 		};
 		587DB55E1B4A953D00956D85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 196C40EBF58631A8B31AEB35 /* Pods-cheesecakelabs.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = cheesecakelabsTests/Info.plist;
@@ -434,6 +605,7 @@
 		};
 		587DB55F1B4A953D00956D85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 196C40EBF58631A8B31AEB35 /* Pods-cheesecakelabs.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = cheesecakelabsTests/Info.plist;
@@ -446,6 +618,7 @@
 		};
 		587DB5611B4A953D00956D85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 196C40EBF58631A8B31AEB35 /* Pods-cheesecakelabs.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = cheesecakelabsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -458,6 +631,7 @@
 		};
 		587DB5621B4A953D00956D85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 196C40EBF58631A8B31AEB35 /* Pods-cheesecakelabs.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = cheesecakelabsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -487,6 +661,7 @@
 				587DB55C1B4A953D00956D85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		587DB55D1B4A953D00956D85 /* Build configuration list for PBXNativeTarget "cheesecakelabsTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +670,7 @@
 				587DB55F1B4A953D00956D85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		587DB5601B4A953D00956D85 /* Build configuration list for PBXNativeTarget "cheesecakelabsUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +679,7 @@
 				587DB5621B4A953D00956D85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

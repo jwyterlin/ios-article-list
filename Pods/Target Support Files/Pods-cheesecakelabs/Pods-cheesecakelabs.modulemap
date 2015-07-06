@@ -1,0 +1,6 @@
+framework module Pods_cheesecakelabs {
+  umbrella header "Pods-cheesecakelabs-umbrella.h"
+
+  export *
+  module * { export * }
+}
