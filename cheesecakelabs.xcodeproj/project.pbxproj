@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		587DB5331B4A953C00956D85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DB5321B4A953C00956D85 /* AppDelegate.swift */; };
+		587DB5351B4A953C00956D85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DB5341B4A953C00956D85 /* ViewController.swift */; };
+		587DB5381B4A953C00956D85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587DB5361B4A953C00956D85 /* Main.storyboard */; };
+		587DB53B1B4A953C00956D85 /* cheesecakelabs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 587DB5391B4A953C00956D85 /* cheesecakelabs.xcdatamodeld */; };
+		587DB53D1B4A953C00956D85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587DB53C1B4A953C00956D85 /* Assets.xcassets */; };
+		587DB5401B4A953C00956D85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587DB53E1B4A953C00956D85 /* LaunchScreen.storyboard */; };
+		587DB54B1B4A953D00956D85 /* cheesecakelabsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DB54A1B4A953D00956D85 /* cheesecakelabsTests.swift */; };
+		587DB5561B4A953D00956D85 /* cheesecakelabsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DB5551B4A953D00956D85 /* cheesecakelabsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		587DB5471B4A953D00956D85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587DB5271B4A953C00956D85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 587DB52E1B4A953C00956D85;
+			remoteInfo = cheesecakelabs;
+		};
+		587DB5521B4A953D00956D85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587DB5271B4A953C00956D85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 587DB52E1B4A953C00956D85;
+			remoteInfo = cheesecakelabs;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		587DB52F1B4A953C00956D85 /* cheesecakelabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cheesecakelabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		587DB5321B4A953C00956D85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		587DB5341B4A953C00956D85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		587DB5371B4A953C00956D85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		587DB53A1B4A953C00956D85 /* cheesecakelabs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = cheesecakelabs.xcdatamodel; sourceTree = "<group>"; };
+		587DB53C1B4A953C00956D85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		587DB53F1B4A953C00956D85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		587DB5411B4A953C00956D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		587DB5461B4A953D00956D85 /* cheesecakelabsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cheesecakelabsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		587DB54A1B4A953D00956D85 /* cheesecakelabsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cheesecakelabsTests.swift; sourceTree = "<group>"; };
+		587DB54C1B4A953D00956D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		587DB5511B4A953D00956D85 /* cheesecakelabsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cheesecakelabsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		587DB5551B4A953D00956D85 /* cheesecakelabsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cheesecakelabsUITests.swift; sourceTree = "<group>"; };
+		587DB5571B4A953D00956D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		587DB52C1B4A953C00956D85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		587DB5431B4A953D00956D85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		587DB54E1B4A953D00956D85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		587DB5261B4A953C00956D85 = {
+			isa = PBXGroup;
+			children = (
+				587DB5311B4A953C00956D85 /* cheesecakelabs */,
+				587DB5491B4A953D00956D85 /* cheesecakelabsTests */,
+				587DB5541B4A953D00956D85 /* cheesecakelabsUITests */,
+				587DB5301B4A953C00956D85 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		587DB5301B4A953C00956D85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				587DB52F1B4A953C00956D85 /* cheesecakelabs.app */,
+				587DB5461B4A953D00956D85 /* cheesecakelabsTests.xctest */,
+				587DB5511B4A953D00956D85 /* cheesecakelabsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		587DB5311B4A953C00956D85 /* cheesecakelabs */ = {
+			isa = PBXGroup;
+			children = (
+				587DB5321B4A953C00956D85 /* AppDelegate.swift */,
+				587DB5341B4A953C00956D85 /* ViewController.swift */,
+				587DB5361B4A953C00956D85 /* Main.storyboard */,
+				587DB53C1B4A953C00956D85 /* Assets.xcassets */,
+				587DB53E1B4A953C00956D85 /* LaunchScreen.storyboard */,
+				587DB5411B4A953C00956D85 /* Info.plist */,
+				587DB5391B4A953C00956D85 /* cheesecakelabs.xcdatamodeld */,
+			);
+			path = cheesecakelabs;
+			sourceTree = "<group>";
+		};
+		587DB5491B4A953D00956D85 /* cheesecakelabsTests */ = {
+			isa = PBXGroup;
+			children = (
+				587DB54A1B4A953D00956D85 /* cheesecakelabsTests.swift */,
+				587DB54C1B4A953D00956D85 /* Info.plist */,
+			);
+			path = cheesecakelabsTests;
+			sourceTree = "<group>";
+		};
+		587DB5541B4A953D00956D85 /* cheesecakelabsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				587DB5551B4A953D00956D85 /* cheesecakelabsUITests.swift */,
+				587DB5571B4A953D00956D85 /* Info.plist */,
+			);
+			path = cheesecakelabsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		587DB52E1B4A953C00956D85 /* cheesecakelabs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 587DB55A1B4A953D00956D85 /* Build configuration list for PBXNativeTarget "cheesecakelabs" */;
+			buildPhases = (
+				587DB52B1B4A953C00956D85 /* Sources */,
+				587DB52C1B4A953C00956D85 /* Frameworks */,
+				587DB52D1B4A953C00956D85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cheesecakelabs;
+			productName = cheesecakelabs;
+			productReference = 587DB52F1B4A953C00956D85 /* cheesecakelabs.app */;
+			productType = "com.apple.product-type.application";
+		};
+		587DB5451B4A953D00956D85 /* cheesecakelabsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 587DB55D1B4A953D00956D85 /* Build configuration list for PBXNativeTarget "cheesecakelabsTests" */;
+			buildPhases = (
+				587DB5421B4A953D00956D85 /* Sources */,
+				587DB5431B4A953D00956D85 /* Frameworks */,
+				587DB5441B4A953D00956D85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				587DB5481B4A953D00956D85 /* PBXTargetDependency */,
+			);
+			name = cheesecakelabsTests;
+			productName = cheesecakelabsTests;
+			productReference = 587DB5461B4A953D00956D85 /* cheesecakelabsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		587DB5501B4A953D00956D85 /* cheesecakelabsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 587DB5601B4A953D00956D85 /* Build configuration list for PBXNativeTarget "cheesecakelabsUITests" */;
+			buildPhases = (
+				587DB54D1B4A953D00956D85 /* Sources */,
+				587DB54E1B4A953D00956D85 /* Frameworks */,
+				587DB54F1B4A953D00956D85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				587DB5531B4A953D00956D85 /* PBXTargetDependency */,
+			);
+			name = cheesecakelabsUITests;
+			productName = cheesecakelabsUITests;
+			productReference = 587DB5511B4A953D00956D85 /* cheesecakelabsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		587DB5271B4A953C00956D85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Coruja Virtual";
+				TargetAttributes = {
+					587DB52E1B4A953C00956D85 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					587DB5451B4A953D00956D85 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 587DB52E1B4A953C00956D85;
+					};
+					587DB5501B4A953D00956D85 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 587DB52E1B4A953C00956D85;
+					};
+				};
+			};
+			buildConfigurationList = 587DB52A1B4A953C00956D85 /* Build configuration list for PBXProject "cheesecakelabs" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 587DB5261B4A953C00956D85;
+			productRefGroup = 587DB5301B4A953C00956D85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				587DB52E1B4A953C00956D85 /* cheesecakelabs */,
+				587DB5451B4A953D00956D85 /* cheesecakelabsTests */,
+				587DB5501B4A953D00956D85 /* cheesecakelabsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		587DB52D1B4A953C00956D85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				587DB5401B4A953C00956D85 /* LaunchScreen.storyboard in Resources */,
+				587DB53D1B4A953C00956D85 /* Assets.xcassets in Resources */,
+				587DB5381B4A953C00956D85 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		587DB5441B4A953D00956D85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		587DB54F1B4A953D00956D85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		587DB52B1B4A953C00956D85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				587DB53B1B4A953C00956D85 /* cheesecakelabs.xcdatamodeld in Sources */,
+				587DB5351B4A953C00956D85 /* ViewController.swift in Sources */,
+				587DB5331B4A953C00956D85 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		587DB5421B4A953D00956D85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				587DB54B1B4A953D00956D85 /* cheesecakelabsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		587DB54D1B4A953D00956D85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				587DB5561B4A953D00956D85 /* cheesecakelabsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		587DB5481B4A953D00956D85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 587DB52E1B4A953C00956D85 /* cheesecakelabs */;
+			targetProxy = 587DB5471B4A953D00956D85 /* PBXContainerItemProxy */;
+		};
+		587DB5531B4A953D00956D85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 587DB52E1B4A953C00956D85 /* cheesecakelabs */;
+			targetProxy = 587DB5521B4A953D00956D85 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		587DB5361B4A953C00956D85 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				587DB5371B4A953C00956D85 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		587DB53E1B4A953C00956D85 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				587DB53F1B4A953C00956D85 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		587DB5581B4A953D00956D85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		587DB5591B4A953D00956D85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		587DB55B1B4A953D00956D85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = cheesecakelabs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.corujavirtual.cheesecakelabs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		587DB55C1B4A953D00956D85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = cheesecakelabs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.corujavirtual.cheesecakelabs;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		587DB55E1B4A953D00956D85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = cheesecakelabsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.corujavirtual.cheesecakelabsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cheesecakelabs.app/cheesecakelabs";
+			};
+			name = Debug;
+		};
+		587DB55F1B4A953D00956D85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = cheesecakelabsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.corujavirtual.cheesecakelabsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cheesecakelabs.app/cheesecakelabs";
+			};
+			name = Release;
+		};
+		587DB5611B4A953D00956D85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = cheesecakelabsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.corujavirtual.cheesecakelabsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = cheesecakelabs;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		587DB5621B4A953D00956D85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = cheesecakelabsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.corujavirtual.cheesecakelabsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = cheesecakelabs;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		587DB52A1B4A953C00956D85 /* Build configuration list for PBXProject "cheesecakelabs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				587DB5581B4A953D00956D85 /* Debug */,
+				587DB5591B4A953D00956D85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		587DB55A1B4A953D00956D85 /* Build configuration list for PBXNativeTarget "cheesecakelabs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				587DB55B1B4A953D00956D85 /* Debug */,
+				587DB55C1B4A953D00956D85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		587DB55D1B4A953D00956D85 /* Build configuration list for PBXNativeTarget "cheesecakelabsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				587DB55E1B4A953D00956D85 /* Debug */,
+				587DB55F1B4A953D00956D85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		587DB5601B4A953D00956D85 /* Build configuration list for PBXNativeTarget "cheesecakelabsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				587DB5611B4A953D00956D85 /* Debug */,
+				587DB5621B4A953D00956D85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		587DB5391B4A953C00956D85 /* cheesecakelabs.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				587DB53A1B4A953C00956D85 /* cheesecakelabs.xcdatamodel */,
+			);
+			currentVersion = 587DB53A1B4A953C00956D85 /* cheesecakelabs.xcdatamodel */;
+			path = cheesecakelabs.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 587DB5271B4A953C00956D85 /* Project object */;
+}
