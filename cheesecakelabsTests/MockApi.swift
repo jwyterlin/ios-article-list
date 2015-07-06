@@ -14,7 +14,7 @@ import UIKit
 /**
 Inherits from the Api class and overrides its functions
 */
-class MowckApi: Api {
+class MockApi: Api {
     
     override class var sharedInstance: MockApi {
         struct Static {

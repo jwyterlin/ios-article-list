@@ -3,12 +3,12 @@
 //  ckl
 //
 //  Created by Israel Tavares on 7/4/15.
-//  Copyright (c) 2015 Coruja Virtual. All rights reserved.
 //
+//  Copyright (c) 2015 Coruja Virtual. All rights reserved.
 
 import UIKit
 
-class ArticleListCrl: UIViewController, ArticleTableViewProtocol {
+class ArticleListCrl: UIViewController, ArticleTableViewProc, UIPopoverPresentationControllerDelegate {
     
     var API: Api = Api.sharedInstance
     var articleTableview: ArticleTableview = ArticleTableview(frame: CGRectZero, style: UITableViewStyle.Plain)
@@ -17,17 +17,15 @@ class ArticleListCrl: UIViewController, ArticleTableViewProtocol {
         super.viewDidLoad()
         
         self.title = "Articles"
+    
         
-        let NAVIGATION_BAR_HEIGHT = self.navigationController?.navigationBar.frame.height
-        let STATUS_BAR_HEIGHT = UIApplication.sharedApplication().statusBarFrame.size.height
-                
         articleTableview.frame = CGRectMake(0,
-            NAVIGATION_BAR_HEIGHT! + STATUS_BAR_HEIGHT,
+            60,
             self.view.bounds.width,
-            self.view.bounds.height-(NAVIGATION_BAR_HEIGHT! + STATUS_BAR_HEIGHT))
-        articleTableview.protocolDelegate = self
-        articleTableview.separatorColor = UIColor.clearColor()
+            self.view.bounds.height - 60)
         self.view.addSubview(articleTableview)
+        articleTableview.protocolDelegate = self
+        
         getArticles()
 
     }
@@ -54,6 +52,24 @@ class ArticleListCrl: UIViewController, ArticleTableViewProtocol {
         self.navigationController?.pushViewController(articleContentController, animated: true)
     }
     
+    /**
+    Force popover presentation on iPhone
+    */
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.None
+    }
+    
+    /**
+    Force popover presentation on iPhone
+    */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SortPopover" {
+            let popoverViewController = segue.destinationViewController as UIViewController
+            popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
+            popoverViewController.popoverPresentationController!.delegate = self
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

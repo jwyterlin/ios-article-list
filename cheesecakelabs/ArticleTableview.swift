@@ -13,13 +13,14 @@ import Alamofire
 class ArticleTableview: UITableView, UITableViewDelegate, UITableViewDataSource {
     
     var API = Api.sharedInstance
-    var protocolDelegate: ArticleTableViewProtocol?
+    var protocolDelegate: ArticleTableViewProc?
     var articles: NSArray = NSArray()
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         self.delegate = self
         self.dataSource = self
+        self.showsVerticalScrollIndicator = false
         let nib = UINib(nibName: "ArticleTableViewCell", bundle: nil)
         self.registerNib(nib, forCellReuseIdentifier: "ArticleTableViewCell")
     }
@@ -66,6 +67,5 @@ class ArticleTableview: UITableView, UITableViewDelegate, UITableViewDataSource 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         protocolDelegate?.articleSelected(self.articles[indexPath.row] as! NSDictionary)
     }
-    
     
 }

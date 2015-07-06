@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol ArticleTableViewProtocol {
+protocol ArticleTableViewProc {
     func articleSelected(article: NSDictionary)
 }

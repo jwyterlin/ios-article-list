@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Coruja Virtual. All rights reserved.
 //
 
-import UIKit
 import XCTest
 @testable import cheesecakelabs
 

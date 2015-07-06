@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5807812B1B4AF83100D00C9F /* SortTableViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5807812A1B4AF83100D00C9F /* SortTableViewCtrl.swift */; };
 		58425DA21B4A97FE00461071 /* ArticleTableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DA11B4A97FE00461071 /* ArticleTableview.swift */; };
 		58425DA51B4A984700461071 /* ArticleTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DA41B4A984700461071 /* ArticleTableviewCell.swift */; };
 		58425DA81B4A987800461071 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58425DA71B4A987800461071 /* ArticleTableViewCell.xib */; };
-		58425DAB1B4A989900461071 /* ArticleTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DAA1B4A989900461071 /* ArticleTableViewProtocol.swift */; };
+		58425DAB1B4A989900461071 /* ArticleTableViewProc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DAA1B4A989900461071 /* ArticleTableViewProc.swift */; };
 		58425DAD1B4A9CA800461071 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DAC1B4A9CA800461071 /* Core.swift */; };
 		58425DAF1B4A9CD300461071 /* ArticleContentCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DAE1B4A9CD300461071 /* ArticleContentCtrl.swift */; };
 		58425DB71B4AA00A00461071 /* cheesecakelabsArticle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DB51B4AA00A00461071 /* cheesecakelabsArticle+CoreDataProperties.swift */; };
@@ -24,6 +25,8 @@
 		587DB5401B4A953C00956D85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587DB53E1B4A953C00956D85 /* LaunchScreen.storyboard */; };
 		587DB54B1B4A953D00956D85 /* ArticleTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DB54A1B4A953D00956D85 /* ArticleTableViewTests.swift */; };
 		587DB5561B4A953D00956D85 /* cheesecakelabsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DB5551B4A953D00956D85 /* cheesecakelabsUITests.swift */; };
+		58BD30E31B4B0D7B00F66430 /* SortTableViewCtrlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BD30E21B4B0D7B00F66430 /* SortTableViewCtrlTests.swift */; };
+		58BD30E51B4B1ECC00F66430 /* SortTableViewCtrlProc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BD30E41B4B1ECC00F66430 /* SortTableViewCtrlProc.swift */; };
 		58DD1BE21B4A966D005FACE9 /* ArticleListCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DD1BE11B4A966D005FACE9 /* ArticleListCtrl.swift */; };
 		58DD1BE51B4A9694005FACE9 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DD1BE41B4A9694005FACE9 /* Api.swift */; };
 		E0C319752552C2C3DD0F9122 /* Pods_cheesecakelabs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5710F4BE07B0C9C1C3EF149D /* Pods_cheesecakelabs.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -49,10 +52,11 @@
 /* Begin PBXFileReference section */
 		196C40EBF58631A8B31AEB35 /* Pods-cheesecakelabs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cheesecakelabs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cheesecakelabs/Pods-cheesecakelabs.debug.xcconfig"; sourceTree = "<group>"; };
 		5710F4BE07B0C9C1C3EF149D /* Pods_cheesecakelabs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cheesecakelabs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5807812A1B4AF83100D00C9F /* SortTableViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortTableViewCtrl.swift; sourceTree = "<group>"; };
 		58425DA11B4A97FE00461071 /* ArticleTableview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableview.swift; sourceTree = "<group>"; };
 		58425DA41B4A984700461071 /* ArticleTableviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableviewCell.swift; sourceTree = "<group>"; };
 		58425DA71B4A987800461071 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
-		58425DAA1B4A989900461071 /* ArticleTableViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewProtocol.swift; sourceTree = "<group>"; };
+		58425DAA1B4A989900461071 /* ArticleTableViewProc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewProc.swift; sourceTree = "<group>"; };
 		58425DAC1B4A9CA800461071 /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		58425DAE1B4A9CD300461071 /* ArticleContentCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleContentCtrl.swift; sourceTree = "<group>"; };
 		58425DB51B4AA00A00461071 /* cheesecakelabsArticle+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "cheesecakelabsArticle+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 		587DB5511B4A953D00956D85 /* cheesecakelabsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cheesecakelabsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		587DB5551B4A953D00956D85 /* cheesecakelabsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cheesecakelabsUITests.swift; sourceTree = "<group>"; };
 		587DB5571B4A953D00956D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58BD30E21B4B0D7B00F66430 /* SortTableViewCtrlTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortTableViewCtrlTests.swift; sourceTree = "<group>"; };
+		58BD30E41B4B1ECC00F66430 /* SortTableViewCtrlProc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortTableViewCtrlProc.swift; sourceTree = "<group>"; };
 		58DD1BE11B4A966D005FACE9 /* ArticleListCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListCtrl.swift; sourceTree = "<group>"; };
 		58DD1BE41B4A9694005FACE9 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		FBE8D28F3D6F44A14BEF0693 /* Pods-cheesecakelabs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cheesecakelabs.release.xcconfig"; path = "Pods/Target Support Files/Pods-cheesecakelabs/Pods-cheesecakelabs.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +129,8 @@
 		58425DA91B4A989100461071 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
-				58425DAA1B4A989900461071 /* ArticleTableViewProtocol.swift */,
+				58425DAA1B4A989900461071 /* ArticleTableViewProc.swift */,
+				58BD30E41B4B1ECC00F66430 /* SortTableViewCtrlProc.swift */,
 			);
 			name = protocol;
 			sourceTree = "<group>";
@@ -182,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				58425DBB1B4AA76D00461071 /* HomeCtrlTests.swift */,
+				58BD30E21B4B0D7B00F66430 /* SortTableViewCtrlTests.swift */,
 				587DB54A1B4A953D00956D85 /* ArticleTableViewTests.swift */,
 				587DB54C1B4A953D00956D85 /* Info.plist */,
 				58425DB91B4AA17400461071 /* MockApi.swift */,
@@ -201,6 +209,7 @@
 		58DD1BE01B4A9656005FACE9 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				5807812A1B4AF83100D00C9F /* SortTableViewCtrl.swift */,
 				58425DAE1B4A9CD300461071 /* ArticleContentCtrl.swift */,
 				58DD1BE11B4A966D005FACE9 /* ArticleListCtrl.swift */,
 			);
@@ -416,16 +425,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58BD30E51B4B1ECC00F66430 /* SortTableViewCtrlProc.swift in Sources */,
 				587DB53B1B4A953C00956D85 /* cheesecakelabs.xcdatamodeld in Sources */,
 				58425DB71B4AA00A00461071 /* cheesecakelabsArticle+CoreDataProperties.swift in Sources */,
 				58DD1BE21B4A966D005FACE9 /* ArticleListCtrl.swift in Sources */,
-				58425DAB1B4A989900461071 /* ArticleTableViewProtocol.swift in Sources */,
+				58425DAB1B4A989900461071 /* ArticleTableViewProc.swift in Sources */,
 				58DD1BE51B4A9694005FACE9 /* Api.swift in Sources */,
 				58425DA21B4A97FE00461071 /* ArticleTableview.swift in Sources */,
 				58425DB81B4AA00A00461071 /* cheesecakelabsArticle.swift in Sources */,
 				587DB5331B4A953C00956D85 /* AppDelegate.swift in Sources */,
 				58425DAD1B4A9CA800461071 /* Core.swift in Sources */,
 				58425DA51B4A984700461071 /* ArticleTableviewCell.swift in Sources */,
+				5807812B1B4AF83100D00C9F /* SortTableViewCtrl.swift in Sources */,
 				58425DAF1B4A9CD300461071 /* ArticleContentCtrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +447,7 @@
 			files = (
 				58425DBA1B4AA17400461071 /* MockApi.swift in Sources */,
 				58425DBC1B4AA76D00461071 /* HomeCtrlTests.swift in Sources */,
+				58BD30E31B4B0D7B00F66430 /* SortTableViewCtrlTests.swift in Sources */,
 				587DB54B1B4A953D00956D85 /* ArticleTableViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
