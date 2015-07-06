@@ -39,6 +39,17 @@ class SortTableViewCtrlTests: XCTestCase {
         XCTAssertEqual(sortTableViewCtrl!.sortTableView.numberOfRowsInSection(0), 4, "Wrong number or rows in articles tableview")
     }
     
+    func testSortOptionsArrayLenght() {
+        XCTAssertEqual(sortTableViewCtrl!.options.count, 4, "Sort options array doesn't have the right number os options")
+    }
+    
+    func testSortOptionsArrayItems() {
+        var options: NSArray = NSArray(array: ["Title", "Date", "Authors", "Website"])
+        for var index = 0; index < options.count; ++index {
+            XCTAssertEqual(sortTableViewCtrl!.options[index] as! String, options[index] as! String, "Sort option doesn't not match the requeriments")
+        }
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock() {

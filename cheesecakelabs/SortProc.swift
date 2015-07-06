@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol SortTableViewCtrlProc {
-    func articleSelected(sortBy: String)
+protocol SortProc {
+    func articlesSorted(articles: [Article])
 }

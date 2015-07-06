@@ -50,14 +50,14 @@ public class Core {
             inManagedObjectContext:managedContext)
 
         /**
-        Loop though articles array
+        Loop through articles array
         */
         for item in articles
         {
             let article = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
             
             /**
-            Key, Value loop in item
+            Key, Value loop through item
             */
             for(k, v) in item as! [String: AnyObject]
             {
@@ -81,25 +81,33 @@ public class Core {
             }
 
         }
-        retriveData()
     }
     
-    func retriveData() -> NSArray {
+    func retriveData(sortBy: String) -> [Article]? {
         
         let managedContext = getContext()
-        let fetchRequest = NSFetchRequest(entityName:"Article")
         
-        var articles: NSArray = NSArray()
+        let entity = NSEntityDescription.entityForName("Article", inManagedObjectContext: managedContext)
+        let fetchRequest = NSFetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: sortBy, ascending: true)
+        let sortDescriptors = [sortDescriptor]
+        
+        
+        fetchRequest.sortDescriptors = sortDescriptors
+        fetchRequest.returnsObjectsAsFaults = false;
+        fetchRequest.entity = entity
+        fetchRequest.resultType = NSFetchRequestResultType.ManagedObjectResultType
+        fetchRequest.includesPropertyValues = true
         
         do {
             
-            let fetchedResults: NSArray = try managedContext.executeFetchRequest(fetchRequest)
-            articles =  fetchedResults as NSArray
+            let fetchedResults = try managedContext.executeFetchRequest(fetchRequest) as? [Article]
+            return fetchedResults
             
-        } catch {
-            
+        } catch let fetchError as NSError {
+            print("getGalleryForItem error: \(fetchError.localizedDescription)")
+            return nil
         }
-        return articles
     }
     
     func updateData() {
@@ -109,7 +117,6 @@ public class Core {
         
         fetchRequest.returnsObjectsAsFaults = false;
         fetchRequest.predicate = predicate
-        
         
         do {
             
@@ -125,7 +132,6 @@ public class Core {
         
         
         
-        retriveData()
         //print(fetchedResults)
     }
     

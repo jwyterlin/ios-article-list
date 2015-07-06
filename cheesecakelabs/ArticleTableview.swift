@@ -29,8 +29,8 @@ class ArticleTableview: UITableView, UITableViewDelegate, UITableViewDataSource 
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addArticles(suggestionArray: NSArray) {
-        self.articles = suggestionArray
+    func addArticles(articlesArray: NSArray) {
+        self.articles = articlesArray
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

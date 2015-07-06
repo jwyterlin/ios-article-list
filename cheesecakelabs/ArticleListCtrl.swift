@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticleListCrl: UIViewController, ArticleTableViewProc, UIPopoverPresentationControllerDelegate {
+class ArticleListCrl: UIViewController, ArticleTableViewProc, SortProc, UIPopoverPresentationControllerDelegate {
     
     var API: Api = Api.sharedInstance
     var articleTableview: ArticleTableview = ArticleTableview(frame: CGRectZero, style: UITableViewStyle.Plain)
@@ -17,7 +17,8 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, UIPopoverPresentat
         super.viewDidLoad()
         
         self.title = "Articles"
-    
+        
+        API.sortProcDelegate = self
         
         articleTableview.frame = CGRectMake(0,
             60,
@@ -50,6 +51,15 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, UIPopoverPresentat
     func articleSelected(article: NSDictionary) {
         let articleContentController = self.storyboard?.instantiateViewControllerWithIdentifier("ArticleContentCtrl") as! ArticleContentCtrl
         self.navigationController?.pushViewController(articleContentController, animated: true)
+    }
+    
+    func articlesSorted(sortedArticles: [Article]) {
+        let articles = NSMutableArray()
+        for item: Article in sortedArticles {
+            articles.addObject(item.dictionaryWithValuesForKeys(["website", "title", "authors", "image", "date", "content"]))
+        }
+        self.articleTableview.addArticles(articles)
+        self.articleTableview.reloadData()
     }
     
     /**

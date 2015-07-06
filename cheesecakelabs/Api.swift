@@ -17,6 +17,8 @@ public class Api {
     private final let ARTICLES_URL = "http://www.ckl.io/challenge/"
     private final let CORE = Core()
     
+    var sortProcDelegate: SortProc?
+    
     public class var sharedInstance: Api {
         struct Static {
             static let instance: Api = Api()
@@ -59,5 +61,10 @@ public class Api {
         CORE.createData(articles)
     }
     
+    func sortArticlesBy(sortBy: String){
+        if let articles = CORE.retriveData(sortBy) {
+            sortProcDelegate?.articlesSorted(articles)
+        }
+    }
     
 }

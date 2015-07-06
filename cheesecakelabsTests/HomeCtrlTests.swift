@@ -47,7 +47,7 @@ class HomeCtrlTests: XCTestCase {
     }
     
     func testArticleListCtrlConformsToArticleTableViewProtocol() {
-        XCTAssertTrue(articleListCrl is ArticleTableViewProtocol, "articleListCrl does not conform to ArticleTableViewProtocol")
+        XCTAssertTrue(articleListCrl is ArticleTableViewProc, "articleListCrl does not conform to ArticleTableViewProtocol")
     }
 
     func testPerformanceExample() {
