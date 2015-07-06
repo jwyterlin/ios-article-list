@@ -7,11 +7,22 @@
         <!--Navigation Controller-->
         <scene sceneID="y8M-bo-aA2">
             <objects>
-                <navigationController id="ViJ-BK-YlX" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cdI-6x-ltJ">
+                <navigationController hidesBarsWhenVerticallyCompact="YES" id="ViJ-BK-YlX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="cdI-6x-ltJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.24982203575073661" green="0.89869397095959591" blue="0.23375815038818476" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="0.99853528856781881" blue="0.9708716687346135" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.060599416178747346" green="0.17544748141710548" blue="0.22638494318181823" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ihh-XP-K6H">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.86089529078198435" green="0.89869397095959591" blue="0.37986240369134505" alpha="1" colorSpace="calibratedRGB"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZkH-hi-Z9b"/>
                     </connections>
@@ -31,9 +42,11 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.9267479482323232" green="0.9267479482323232" blue="0.9267479482323232" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9co-fj-HXv"/>
+                    <navigationItem key="navigationItem" id="9co-fj-HXv">
+                        <barButtonItem key="rightBarButtonItem" image="ic_view_list" id="OKP-I1-z27"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,10 +65,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVU-6P-M2o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="491" y="361"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_view_list" width="24" height="24"/>
+    </resources>
+    <color key="tintColor" red="0.86089529078198435" green="0.89869397095959591" blue="0.37986240369134505" alpha="1" colorSpace="calibratedRGB"/>
 </document>

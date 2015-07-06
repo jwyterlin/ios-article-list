@@ -41,10 +41,10 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="activityIndicator" destination="cFf-Er-cfw" id="bhg-IX-iuX"/>
-                <outlet property="articleDate" destination="Lx9-x4-uHT" id="UhR-1K-QvT"/>
+                <outlet property="articleDate" destination="Lx9-x4-uHT" id="6Fg-Mj-sRR"/>
                 <outlet property="articleImage" destination="SaT-Fz-YJC" id="EtA-rY-cCL"/>
-                <outlet property="articleTitle" destination="yLY-Qf-4gN" id="Vc6-BC-vYl"/>
-                <outlet property="articleWebsite" destination="xQN-g2-jG3" id="rVB-Ti-cXv"/>
+                <outlet property="articleTitle" destination="yLY-Qf-4gN" id="PIi-rl-sHy"/>
+                <outlet property="articleWebsite" destination="xQN-g2-jG3" id="HGa-2x-VdF"/>
             </connections>
             <point key="canvasLocation" x="299" y="223"/>
         </tableViewCell>

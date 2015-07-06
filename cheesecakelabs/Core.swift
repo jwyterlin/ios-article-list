@@ -25,22 +25,18 @@ public class Core {
     
     func dateFormatter(dateString: String) -> (possible: Bool, date: NSDate) {
         
-        print(dateString)
         let formatter = NSDateFormatter()
-        formatter.locale = NSLocale(localeIdentifier: "pt")
-        formatter.dateFormat = "dd-mm-yyyy"
-        //let date = formatter.dateFromString("Thu, 04 Sep 2014 10:50:12 +0000")
+        formatter.dateFormat = "dd/mm/yyyy"
         
-                
         if let date = formatter.dateFromString(dateString)
         {
-            print(date)
             return (true, date)
         }
             else
         {
             return (false, NSDate())
         }
+        
     }
     
     /**
@@ -88,21 +84,22 @@ public class Core {
         retriveData()
     }
     
-    func retriveData() {
-        let managedContext = getContext()
+    func retriveData() -> NSArray {
         
+        let managedContext = getContext()
         let fetchRequest = NSFetchRequest(entityName:"Article")
+        
+        var articles: NSArray = NSArray()
         
         do {
             
             let fetchedResults: NSArray = try managedContext.executeFetchRequest(fetchRequest)
-            
-            print(fetchedResults)
+            articles =  fetchedResults as NSArray
             
         } catch {
-            print(error)
+            
         }
-        
+        return articles
     }
     
     func updateData() {

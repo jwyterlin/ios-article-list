@@ -19,6 +19,9 @@ class ArticleTableviewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        articleImage.layer.cornerRadius = 45
+        articleImage.layer.masksToBounds = true
+        articleImage.clipsToBounds = true
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -36,4 +39,5 @@ class ArticleTableviewCell: UITableViewCell {
         activityIndicator.stopAnimating()
         activityIndicator.hidden = true
     }
+    
 }

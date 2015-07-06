@@ -15,10 +15,21 @@ class ArticleListCrl: UIViewController, ArticleTableViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        articleTableview.frame = CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height)
+        
+        self.title = "Articles"
+        
+        let NAVIGATION_BAR_HEIGHT = self.navigationController?.navigationBar.frame.height
+        let STATUS_BAR_HEIGHT = UIApplication.sharedApplication().statusBarFrame.size.height
+                
+        articleTableview.frame = CGRectMake(0,
+            NAVIGATION_BAR_HEIGHT! + STATUS_BAR_HEIGHT,
+            self.view.bounds.width,
+            self.view.bounds.height-(NAVIGATION_BAR_HEIGHT! + STATUS_BAR_HEIGHT))
         articleTableview.protocolDelegate = self
+        articleTableview.separatorColor = UIColor.clearColor()
         self.view.addSubview(articleTableview)
         getArticles()
+
     }
     
     func getArticles() {
