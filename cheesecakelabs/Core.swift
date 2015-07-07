@@ -43,8 +43,8 @@ public class Core {
             */
             if(dataExists((item["title"] as? String)!, website: (item["website"] as? String)!) == 0) {
                 
-                let article = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
-                
+                let article = Article(entity: entity!, insertIntoManagedObjectContext: managedContext)
+
                 /**
                 Key, Value loop through item
                 */
@@ -113,6 +113,11 @@ public class Core {
         return count
     }
     
+    /**
+    Retrives sorted data based on parameter
+    - parameter sort by - title, website, or author. Though is possible to sort by any parameter contained in the Article model
+    - returns: Array of Article model
+    */
     func retriveData(sortBy: String) -> [Article]? {
         
         let managedContext = getContext()
@@ -145,6 +150,9 @@ public class Core {
         }
     }
     
+    /**
+    // TODO: Select Article by title and website and update read field
+    */
     func updateData() {
         let managedContext = getContext()
         let fetchRequest = NSFetchRequest(entityName:"Article")
@@ -161,6 +169,8 @@ public class Core {
             
             article.setValue(true, forKey: "read")
             
+            try managedContext.save()
+
         } catch {
             
             print("Could not save to core data")

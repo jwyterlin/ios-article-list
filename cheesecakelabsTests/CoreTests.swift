@@ -8,6 +8,8 @@
 
 import XCTest
 import CoreData
+import SwiftyJSON
+
 @testable import cheesecakelabs
 
 class CoreTests: XCTestCase {
@@ -26,15 +28,16 @@ class CoreTests: XCTestCase {
     }
     
     func testCreateData() {
+    
     }
 
     
-    func testSomethingUsingCoreData() {
-        let managedObjectContext = setUpInMemoryManagedObjectContext()
-        let entity = NSEntityDescription.insertNewObjectForEntityForName("Article", inManagedObjectContext: managedObjectContext!)
-        // model setup
+    func testRetriveData() {
         
-        // XCTAssert
+    }
+    
+    func testUpdateData() {
+        
     }
 
     func testPerformanceExample() {

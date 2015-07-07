@@ -20,6 +20,7 @@ class HomeCtrlTests: XCTestCase {
     }
     
     override func tearDown() {
+        articleListCrl = nil
         super.tearDown()
     }
 

@@ -22,7 +22,7 @@ class SortTableViewCtrlTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sortTableViewCtrl = nil
         super.tearDown()
     }
 
@@ -44,7 +44,7 @@ class SortTableViewCtrlTests: XCTestCase {
     }
     
     func testSortOptionsArrayItems() {
-        var options: NSArray = NSArray(array: ["Title", "Date", "Authors", "Website"])
+        let options: NSArray = NSArray(array: ["Title", "Date", "Authors", "Website"])
         for var index = 0; index < options.count; ++index {
             XCTAssertEqual(sortTableViewCtrl!.options[index] as! String, options[index] as! String, "Sort option doesn't not match the requeriments")
         }

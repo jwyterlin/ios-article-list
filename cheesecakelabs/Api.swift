@@ -37,12 +37,11 @@ public class Api {
                 completion(result: articles)
         }
     }
+    
     /**
     Gets image from server and caches it the first time.
-    
     - parameter url: path to image, callback function
     - returns: returns image or cachedImage
-    
     */
     func getArticleImage(url: String, completion: (result: UIImage) -> Void) {
         if let cachedImage = imageCache.objectForKey(url) as? UIImage
