@@ -13,6 +13,7 @@ class ArticleTableviewTests: XCTestCase {
     
     var articleTableview = ArticleTableview(frame: CGRectZero, style: .Plain)
     var mockAPI = MockApi.sharedInstance
+    var articleHelper =  ArticleTableviewHelper()
     
     override func setUp() {
         super.setUp()
@@ -35,13 +36,13 @@ class ArticleTableviewTests: XCTestCase {
     }
     
     func testSetArticlesOnTableView() {
-        articleTableview.addArticles(mockAPI.getArticlesMock())
+        articleTableview.addArticles(articleHelper.getArticles()!)
         XCTAssertEqual(articleTableview.numberOfRowsInSection(0), 1, "Wrong number or rows in articles tableview")
     }
     
     func testSetArticlesWithNilKeyValues() {
-        articleTableview.addArticles(mockAPI.getArticlesWithNilMock())
-        XCTAssertEqual(articleTableview.numberOfRowsInSection(0), 2, "Wrong number or rows in articles tableview")
+        articleTableview.addArticles(articleHelper.getNilArticles()!)
+        XCTAssertEqual(articleTableview.numberOfRowsInSection(0), 1, "Wrong number or rows in articles tableview")
     }
     
 }

@@ -9,6 +9,7 @@
 import Foundation
 import SwiftyJSON
 import UIKit
+
 @testable import cheesecakelabs
 
 /**
@@ -23,6 +24,10 @@ class MockApi: Api {
         return Static.instance
     }
     
+    override func getApiProtocol()-> ApiProc? {
+        return self.apiProcDelegate
+    }
+        
     var jsonObject: [AnyObject] = []
     
     /**
@@ -111,6 +116,51 @@ class MockApi: Api {
     override func getArticleImage(url: String, completion: (result: UIImage) -> Void) {
         let image = UIImage()
         completion(result: image)
+    }
+    
+    /**
+    Perform the same loops perfomed in Core.createData in order to convert the mock objects to Article model
+    */
+    override func saveArticles(articles: NSMutableArray) {
+        
+        var articlesArray = [Article]()
+        /**
+        Loop through articles array
+        */
+        for item in articles
+        {
+            let article = Article(entity: getEntityDescription()!, insertIntoManagedObjectContext: setUpInMemoryManagedObjectContext())
+            
+            /**
+            Key, Value loop through item
+            */
+            for(k, v) in item as! [String: AnyObject]
+            {
+                if let value = v as? String
+                {
+                    /**
+                    Convert date to NSDate
+                    */
+                    if k == "date"
+                    {
+                        article.setValue(StringDateConversion.getNSDate(value), forKey: k)
+                    }
+                    else
+                    {
+                        article.setValue(value, forKey: k)
+                    }
+                }
+            }
+            
+            articlesArray.append(article)
+            
+        }
+        
+        getApiProtocol()?.didSaveArticles(articlesArray)
+    }
+    
+    override func sortArticlesBy(sortBy: String) {
+        
     }
     
 }

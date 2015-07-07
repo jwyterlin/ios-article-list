@@ -57,7 +57,7 @@ public class Core {
                         */
                         if k == "date"
                         {
-                            article.setValue(StringDateConverstion.getNSDate(value), forKey: k)
+                            article.setValue(StringDateConversion.getNSDate(value), forKey: k)
                         }
                         else
                         {

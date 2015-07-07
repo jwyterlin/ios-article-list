@@ -46,7 +46,7 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, ApiProc, UIPopover
         })
     }
     
-    func articleSelected(article: NSDictionary) {
+    func articleSelected(article: Article) {
         let articleContentController = self.storyboard?.instantiateViewControllerWithIdentifier("ArticleContentCtrl") as! ArticleContentCtrl
         self.navigationController?.pushViewController(articleContentController, animated: true)
     }

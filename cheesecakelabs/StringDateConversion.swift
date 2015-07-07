@@ -12,7 +12,7 @@ import UIKit
 /**
 Helper class that converts date String format to NSDate and vice-versa
 */
-class StringDateConverstion {
+class StringDateConversion {
     
 
     internal static func getNSDate(dateString: NSString) -> NSDate?

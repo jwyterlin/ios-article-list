@@ -41,14 +41,16 @@ class ArticleTableview: UITableView, UITableViewDelegate, UITableViewDataSource 
         return 100
     }
     
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let Cell = self.dequeueReusableCellWithIdentifier("ArticleTableViewCell") as! ArticleTableviewCell
         Cell.articleTitle.text = self.articles[indexPath.row].title
         Cell.articleWebsite.text = self.articles[indexPath.row].website
-        Cell.articleDate.text = StringDateConverstion.getBRString(self.articles[indexPath.row].date!) as? String
-        print(self.articles[indexPath.row].date)
+        Cell.articleDate.text = StringDateConversion.getBRString(self.articles[indexPath.row].date!) as? String
+
+        /**
+        If no images in the available use placeholder
+        */
         if let imageUrl = self.articles[indexPath.row].image {
             API.getArticleImage(imageUrl, completion: {
                 result in
@@ -65,7 +67,7 @@ class ArticleTableview: UITableView, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        protocolDelegate?.articleSelected(self.articles[indexPath.row] as! NSDictionary)
+        protocolDelegate?.articleSelected(self.articles[indexPath.row])
     }
     
 }

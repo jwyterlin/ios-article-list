@@ -9,5 +9,5 @@
 import UIKit
 
 protocol ArticleTableViewProc {
-    func articleSelected(article: NSDictionary)
+    func articleSelected(article: Article)
 }

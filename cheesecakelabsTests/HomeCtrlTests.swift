@@ -50,6 +50,10 @@ class HomeCtrlTests: XCTestCase {
         XCTAssertTrue(articleListCrl is ArticleTableViewProc, "articleListCrl does not conform to ArticleTableViewProtocol")
     }
 
+    func testArticleListCtrlConformsToApiProtocol() {
+        XCTAssertTrue(articleListCrl is ApiProc, "articleListCrl does not conform to ApiProtocol")
+    }
+
     func testPerformanceExample() {
         self.measureBlock() {
         }

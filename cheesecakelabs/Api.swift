@@ -26,6 +26,10 @@ public class Api {
         return Static.instance
     }
     
+    func getApiProtocol() -> ApiProc? {
+        return self.apiProcDelegate
+    }
+    
     public func getArticles(completion: (result: JSON) -> Void) {
         Alamofire.request(.GET, URLString: ARTICLES_URL)
             .responseJSON { (_, _, data, _) in
@@ -63,7 +67,7 @@ public class Api {
                 apiProcDelegate?.articlesSorted(articles)
             }
         }
-        
+
     }
         
     func sortArticlesBy(sortBy: String){

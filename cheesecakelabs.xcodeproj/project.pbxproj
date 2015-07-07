@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5807812B1B4AF83100D00C9F /* SortTableViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5807812A1B4AF83100D00C9F /* SortTableViewCtrl.swift */; };
+		582808931B4BE75C001603B0 /* ArticleTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582808921B4BE75C001603B0 /* ArticleTableViewHelper.swift */; };
 		5840354B1B4BAB43009D39FA /* StringDateConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5840354A1B4BAB43009D39FA /* StringDateConversion.swift */; };
+		5840354D1B4BD3E3009D39FA /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5840354C1B4BD3E3009D39FA /* CoreTests.swift */; };
+		5840354F1B4BD54A009D39FA /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5840354E1B4BD54A009D39FA /* CoreDataHelpers.swift */; };
 		58425DA21B4A97FE00461071 /* ArticleTableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DA11B4A97FE00461071 /* ArticleTableview.swift */; };
 		58425DA51B4A984700461071 /* ArticleTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DA41B4A984700461071 /* ArticleTableviewCell.swift */; };
 		58425DA81B4A987800461071 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58425DA71B4A987800461071 /* ArticleTableViewCell.xib */; };
@@ -54,7 +57,10 @@
 		196C40EBF58631A8B31AEB35 /* Pods-cheesecakelabs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cheesecakelabs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cheesecakelabs/Pods-cheesecakelabs.debug.xcconfig"; sourceTree = "<group>"; };
 		5710F4BE07B0C9C1C3EF149D /* Pods_cheesecakelabs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cheesecakelabs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5807812A1B4AF83100D00C9F /* SortTableViewCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortTableViewCtrl.swift; sourceTree = "<group>"; };
+		582808921B4BE75C001603B0 /* ArticleTableViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewHelper.swift; sourceTree = "<group>"; };
 		5840354A1B4BAB43009D39FA /* StringDateConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringDateConversion.swift; sourceTree = "<group>"; };
+		5840354C1B4BD3E3009D39FA /* CoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
+		5840354E1B4BD54A009D39FA /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		58425DA11B4A97FE00461071 /* ArticleTableview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableview.swift; sourceTree = "<group>"; };
 		58425DA41B4A984700461071 /* ArticleTableviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableviewCell.swift; sourceTree = "<group>"; };
 		58425DA71B4A987800461071 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
@@ -204,6 +210,9 @@
 				587DB54A1B4A953D00956D85 /* ArticleTableViewTests.swift */,
 				587DB54C1B4A953D00956D85 /* Info.plist */,
 				58425DB91B4AA17400461071 /* MockApi.swift */,
+				5840354C1B4BD3E3009D39FA /* CoreTests.swift */,
+				5840354E1B4BD54A009D39FA /* CoreDataHelpers.swift */,
+				582808921B4BE75C001603B0 /* ArticleTableViewHelper.swift */,
 			);
 			path = cheesecakelabsTests;
 			sourceTree = "<group>";
@@ -457,10 +466,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5840354F1B4BD54A009D39FA /* CoreDataHelpers.swift in Sources */,
 				58425DBA1B4AA17400461071 /* MockApi.swift in Sources */,
 				58425DBC1B4AA76D00461071 /* HomeCtrlTests.swift in Sources */,
 				58BD30E31B4B0D7B00F66430 /* SortTableViewCtrlTests.swift in Sources */,
+				5840354D1B4BD3E3009D39FA /* CoreTests.swift in Sources */,
 				587DB54B1B4A953D00956D85 /* ArticleTableViewTests.swift in Sources */,
+				582808931B4BE75C001603B0 /* ArticleTableViewHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
