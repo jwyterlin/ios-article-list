@@ -17,7 +17,7 @@ public class Api {
     private final let ARTICLES_URL = "http://www.ckl.io/challenge/"
     private final let CORE = Core()
     
-    var sortProcDelegate: SortProc?
+    var apiProcDelegate: ApiProc?
     
     public class var sharedInstance: Api {
         struct Static {
@@ -58,12 +58,17 @@ public class Api {
     }
     
     func saveArticles(articles: NSMutableArray) {
-        CORE.createData(articles)
+        if(CORE.createData(articles)) {
+            if let articles = CORE.retriveData("title") {
+                apiProcDelegate?.articlesSorted(articles)
+            }
+        }
+        
     }
-    
+        
     func sortArticlesBy(sortBy: String){
         if let articles = CORE.retriveData(sortBy) {
-            sortProcDelegate?.articlesSorted(articles)
+            apiProcDelegate?.articlesSorted(articles)
         }
     }
     

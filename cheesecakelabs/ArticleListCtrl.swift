@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticleListCrl: UIViewController, ArticleTableViewProc, SortProc, UIPopoverPresentationControllerDelegate {
+class ArticleListCrl: UIViewController, ArticleTableViewProc, ApiProc, UIPopoverPresentationControllerDelegate {
     
     var API: Api = Api.sharedInstance
     var articleTableview: ArticleTableview = ArticleTableview(frame: CGRectZero, style: UITableViewStyle.Plain)
@@ -18,7 +18,7 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, SortProc, UIPopove
         
         self.title = "Articles"
         
-        API.sortProcDelegate = self
+        API.apiProcDelegate = self
         
         articleTableview.frame = CGRectMake(0,
             60,
@@ -43,8 +43,6 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, SortProc, UIPopove
                 
             }
             self.API.saveArticles(articles)
-            self.articleTableview.addArticles(articles)
-            self.articleTableview.reloadData()
         })
     }
     
@@ -53,12 +51,13 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, SortProc, UIPopove
         self.navigationController?.pushViewController(articleContentController, animated: true)
     }
     
-    func articlesSorted(sortedArticles: [Article]) {
-        let articles = NSMutableArray()
-        for item: Article in sortedArticles {
-            articles.addObject(item.dictionaryWithValuesForKeys(["website", "title", "authors", "image", "date", "content"]))
-        }
+    func didSaveArticles(articles: [Article]) {
         self.articleTableview.addArticles(articles)
+        self.articleTableview.reloadData()
+    }
+    
+    func articlesSorted(sortedArticles: [Article]) {
+        self.articleTableview.addArticles(sortedArticles)
         self.articleTableview.reloadData()
     }
     

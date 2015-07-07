@@ -8,6 +8,7 @@
 
 import UIKit
 
-protocol SortProc {
+protocol ApiProc {
+    func didSaveArticles(articles: [Article])
     func articlesSorted(articles: [Article])
 }

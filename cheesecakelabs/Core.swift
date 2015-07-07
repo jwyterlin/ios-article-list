@@ -23,64 +23,94 @@ public class Core {
         return managedContext;
     }
     
-    func dateFormatter(dateString: String) -> (possible: Bool, date: NSDate) {
-        
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "dd/mm/yyyy"
-        
-        if let date = formatter.dateFromString(dateString)
-        {
-            return (true, date)
-        }
-            else
-        {
-            return (false, NSDate())
-        }
-        
-    }
-    
     /**
     - TODO: Use a library to map objects - JSON to swift objects
     check https://github.com/tristanhimmelman/AlamofireObjectMapper
     */
-    func createData(articles: NSMutableArray) {
+    func createData(articles: NSMutableArray) -> Bool {
         let managedContext = getContext()
         
         let entity =  NSEntityDescription.entityForName("Article",
             inManagedObjectContext:managedContext)
-
+        
         /**
         Loop through articles array
         */
         for item in articles
         {
-            let article = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
-            
             /**
-            Key, Value loop through item
+            Check if data exists in CoreData before saving it
             */
-            for(k, v) in item as! [String: AnyObject]
-            {
-                if let value = v as? String
+            if(dataExists((item["title"] as? String)!, website: (item["website"] as? String)!) == 0) {
+                
+                let article = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
+                
+                /**
+                Key, Value loop through item
+                */
+                for(k, v) in item as! [String: AnyObject]
                 {
-                    /**
-                    Convert date to NSDate
-                    */
-                    if k == "date"
+                    if let value = v as? String
                     {
-                        if(dateFormatter(value).possible)
+                        /**
+                        Convert date to NSDate
+                        */
+                        if k == "date"
                         {
-                            article.setValue(dateFormatter(value).date, forKey: k)
+                            article.setValue(StringDateConverstion.getNSDate(value), forKey: k)
+                        }
+                        else
+                        {
+                            article.setValue(value, forKey: k)
                         }
                     }
-                        else
-                    {
-                        article.setValue(value, forKey: k)
-                    }
                 }
+                
             }
-
+            
         }
+        
+        do {
+            
+            try managedContext.save()
+            
+            return true
+            
+        } catch {
+            
+            return false
+            
+        }
+        
+    }
+    
+    /**
+    Check if data exists in CoreData before saving it
+    - parameter title of the website of the article (id would be preferable)
+    - returns: int count of duplicates
+    */
+    func dataExists(title: String, website: String) -> Int {
+        let managedContext = getContext()
+        
+        let entity = NSEntityDescription.entityForName("Article", inManagedObjectContext: managedContext)
+        let fetchRequest = NSFetchRequest()
+        
+        let predicate_website = NSPredicate(format: "website = %@", website)
+        let predicate_title = NSPredicate(format: "title = %@", website)
+
+        let predicate = NSCompoundPredicate(type: NSCompoundPredicateType.OrPredicateType, subpredicates: [predicate_title, predicate_website])
+
+        fetchRequest.predicate = predicate
+        fetchRequest.entity = entity
+        
+        var error: NSError?
+        let count: Int =  managedContext.countForFetchRequest(fetchRequest, error: &error)
+        if count == NSNotFound {
+            print("Error trying to cound object in CoreData");
+            return 0;
+        }
+        
+        return count
     }
     
     func retriveData(sortBy: String) -> [Article]? {
@@ -101,8 +131,13 @@ public class Core {
         
         do {
             
+            var articles = [Article]()
+            
             let fetchedResults = try managedContext.executeFetchRequest(fetchRequest) as? [Article]
-            return fetchedResults
+            
+            articles = fetchedResults!
+            
+            return articles
             
         } catch let fetchError as NSError {
             print("getGalleryForItem error: \(fetchError.localizedDescription)")
@@ -127,12 +162,10 @@ public class Core {
             article.setValue(true, forKey: "read")
             
         } catch {
-            print(error)
+            
+            print("Could not save to core data")
         }
         
-        
-        
-        //print(fetchedResults)
     }
     
 }

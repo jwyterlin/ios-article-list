@@ -14,7 +14,7 @@ class ArticleTableview: UITableView, UITableViewDelegate, UITableViewDataSource 
     
     var API = Api.sharedInstance
     var protocolDelegate: ArticleTableViewProc?
-    var articles: NSArray = NSArray()
+    var articles: [Article] = [Article]()
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -29,7 +29,7 @@ class ArticleTableview: UITableView, UITableViewDelegate, UITableViewDataSource 
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addArticles(articlesArray: NSArray) {
+    func addArticles(articlesArray: [Article]) {
         self.articles = articlesArray
     }
     
@@ -45,11 +45,11 @@ class ArticleTableview: UITableView, UITableViewDelegate, UITableViewDataSource 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let Cell = self.dequeueReusableCellWithIdentifier("ArticleTableViewCell") as! ArticleTableviewCell
-        Cell.articleTitle.text = self.articles[indexPath.row]["title"] as? String
-        Cell.articleWebsite.text = self.articles[indexPath.row]["website"] as? String
-        Cell.articleDate.text = self.articles[indexPath.row]["date"] as? String
-        
-        if let imageUrl = self.articles[indexPath.row]["image"] as? String {
+        Cell.articleTitle.text = self.articles[indexPath.row].title
+        Cell.articleWebsite.text = self.articles[indexPath.row].website
+        Cell.articleDate.text = StringDateConverstion.getBRString(self.articles[indexPath.row].date!) as? String
+        print(self.articles[indexPath.row].date)
+        if let imageUrl = self.articles[indexPath.row].image {
             API.getArticleImage(imageUrl, completion: {
                 result in
                 Cell.updateImage(result)
