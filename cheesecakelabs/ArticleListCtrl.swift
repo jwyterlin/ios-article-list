@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ArticleListCrl.swift
 //  cheesecakelabs
 //
 //  Created by Israel Tavares on 7/4/15.
@@ -26,7 +26,7 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, ApiProc, UIPopover
         
         getArticles()
         
-        self.navigationController!.navigationBar.translucent = false;
+        self.navigationController?.navigationBar.translucent = false;
     }
     
     func updateTableViewDimentions() {
