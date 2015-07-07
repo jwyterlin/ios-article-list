@@ -68,4 +68,5 @@ class ArticleTableview: UITableView, UITableViewDelegate, UITableViewDataSource 
         protocolDelegate?.articleSelected(self.articles[indexPath.row])
     }
     
+    
 }

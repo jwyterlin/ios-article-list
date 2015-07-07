@@ -20,14 +20,27 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, ApiProc, UIPopover
         
         API.apiProcDelegate = self
         
-        articleTableview.frame = CGRectMake(0,
-            60,
-            self.view.bounds.width,
-            self.view.bounds.height - 60)
-        self.view.addSubview(articleTableview)
+        updateTableViewDimentions()
+
         articleTableview.protocolDelegate = self
         
         getArticles()
+
+    }
+    
+    func updateTableViewDimentions() {
+        
+        let rect:CGRect = self.navigationController!.navigationBar.frame;
+        
+        let y = -rect.origin.y;
+        
+        articleTableview.frame = CGRectMake(0,
+            0,
+            self.view.bounds.width,
+            self.view.bounds.height)
+        self.view.addSubview(articleTableview)
+        
+        self.articleTableview.contentInset = UIEdgeInsetsMake(y ,0,0,0);
 
     }
     
@@ -77,6 +90,11 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, ApiProc, UIPopover
             popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
             popoverViewController.popoverPresentationController!.delegate = self
         }
+    }
+    
+    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation:      UIInterfaceOrientation, duration: NSTimeInterval)
+    {
+        updateTableViewDimentions()
     }
 
     override func didReceiveMemoryWarning() {

@@ -21,6 +21,7 @@ class ArticleTableviewCell: UITableViewCell {
         articleImage.layer.cornerRadius = 45
         articleImage.layer.masksToBounds = true
         articleImage.clipsToBounds = true
+    
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
