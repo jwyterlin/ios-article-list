@@ -25,14 +25,11 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, ApiProc, UIPopover
         articleTableview.protocolDelegate = self
         
         getArticles()
-
+        
+        self.navigationController!.navigationBar.translucent = false;
     }
     
     func updateTableViewDimentions() {
-        
-        let rect:CGRect = self.navigationController!.navigationBar.frame;
-        
-        let y = -rect.origin.y;
         
         articleTableview.frame = CGRectMake(0,
             0,
@@ -40,8 +37,7 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, ApiProc, UIPopover
             self.view.bounds.height)
         self.view.addSubview(articleTableview)
         
-        self.articleTableview.contentInset = UIEdgeInsetsMake(y ,0,0,0);
-
+        
     }
     
     func getArticles() {
