@@ -26,14 +26,15 @@ Under development.
 $ git clone https://github.com/ismalakazel/ios-article-list
 ```
 - Open the file `cheesecakelabs.xcworkspace` either by double-clicking the file or running the following in the the project folder:
+
 ```
 $ open cheesecakelabs.xcworkspace`
 ```
 - Choose a simulator or connect an iOS device to your computer and run the application with  `⌘ + R` command
-```
+
 - Run tests with `⌘ + U`
 
-###Preview:
+### Preview:
 
 ![asd](https://raw.githubusercontent.com/ismalakazel/random-api-files/master/ios-article-list/image1.png)
 ![asd](https://raw.githubusercontent.com/ismalakazel/random-api-files/master/ios-article-list/image2.png)
