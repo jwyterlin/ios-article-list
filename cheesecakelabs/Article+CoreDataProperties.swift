@@ -9,7 +9,6 @@
 //  to keep your implementation up to date with your model.
 //
 
-import Foundation
 import CoreData
 
 extension Article {

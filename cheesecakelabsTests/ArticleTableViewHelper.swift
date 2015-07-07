@@ -6,8 +6,6 @@
 //  Copyright © 2015 Coruja Virtual. All rights reserved.
 //
 
-import Foundation
-import SwiftyJSON
 import UIKit
 
 @testable import cheesecakelabs

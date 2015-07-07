@@ -6,8 +6,6 @@
 //  Copyright © 2015 Coruja Virtual. All rights reserved.
 //
 
-import UIKit
-
 protocol ApiProc {
     func didSaveArticles(articles: [Article])
     func articlesSorted(articles: [Article])

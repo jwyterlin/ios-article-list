@@ -6,7 +6,6 @@
 //  Copyright © 2015 Coruja Virtual. All rights reserved.
 //
 
-import Foundation
 import CoreData
 
 class Article: NSManagedObject {

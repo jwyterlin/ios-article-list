@@ -7,8 +7,6 @@
 //
 
 import XCTest
-import CoreData
-import SwiftyJSON
 
 @testable import cheesecakelabs
 

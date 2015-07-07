@@ -6,14 +6,12 @@
 //  Copyright © 2015 Coruja Virtual. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 /**
 Helper class that converts date String format to NSDate and vice-versa
 */
 class StringDateConversion {
-    
 
     internal static func getNSDate(dateString: NSString) -> NSDate?
     {
