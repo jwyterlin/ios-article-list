@@ -36,7 +36,10 @@ $ open cheesecakelabs.xcworkspace`
 
 ### Preview:
 
-![asd](https://raw.githubusercontent.com/ismalakazel/random-api-files/master/ios-article-list/image1.png)
-![asd](https://raw.githubusercontent.com/ismalakazel/random-api-files/master/ios-article-list/image2.png)
+![Portrait](https://raw.githubusercontent.com/ismalakazel/random-api-files/master/ios-article-list/image1.png)
+![Landscape](https://raw.githubusercontent.com/ismalakazel/random-api-files/master/ios-article-list/image2.png)
+
+### Diagram:
+![Diagram](https://raw.githubusercontent.com/ismalakazel/random-api-files/master/ios-article-list/diagram.png)
 
 
