@@ -14,6 +14,7 @@ class ArticleTableviewCell: UITableViewCell {
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var articleWebsite: UILabel!
     @IBOutlet weak var articleDate: UILabel!
+    @IBOutlet weak var articleAuthor: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib()

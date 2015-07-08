@@ -41,6 +41,7 @@ class ArticleTableManager: NSObject, UITableViewDelegate, UITableViewDataSource 
         let Cell = tableView.dequeueReusableCellWithIdentifier("ArticleTableViewCell") as! ArticleTableviewCell
         Cell.articleTitle.text = self.articles[indexPath.row].title
         Cell.articleWebsite.text = self.articles[indexPath.row].website
+        Cell.articleAuthor.text = self.articles[indexPath.row].authors
         if let date = self.articles[indexPath.row].date {
             Cell.articleDate.text = StringDateConversion.getBRString(date) as? String
         }
@@ -69,7 +70,6 @@ class ArticleTableManager: NSObject, UITableViewDelegate, UITableViewDataSource 
         cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
     }
     
-    // TODO: Delete from CoreData
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?
     {
         
