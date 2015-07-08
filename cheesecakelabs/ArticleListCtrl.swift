@@ -25,13 +25,13 @@ class ArticleListCrl: UIViewController, ArticleTabManagerProc, ApiProc, UIPopove
         tableviewManager.protocolDelegate = self
         
         configureArticleTableView()
-        getArticles()
+        API.getArticles()
         
     }
     
     func configureArticleTableView()
     {
-        articleTableview = UITableView(frame: CGRectZero, style: .Plain)
+        articleTableview.frame = self.view.bounds;
         articleTableview.delegate = tableviewManager
         articleTableview.dataSource = tableviewManager
         articleTableview.showsVerticalScrollIndicator = false
@@ -40,28 +40,16 @@ class ArticleListCrl: UIViewController, ArticleTabManagerProc, ApiProc, UIPopove
         self.view.addSubview(articleTableview)
     }
     
-    func getArticles()
-    {
-        API.getArticles({
-            result in
-            let articles = NSMutableArray()
-            for (_, value) in result
-            {
-                if let object = value.dictionaryObject {
-                    articles.addObject(object)
-                }
-                
-            }
-            self.API.saveArticles(articles)
-        })
-    }
-    
-    // MARK: ArticleTableView Protocol functions
+    // MARK: ArticleTableView Protocol implementation
     
     func articleSelected(article: Article)
     {
         let articleContentController = self.storyboard?.instantiateViewControllerWithIdentifier("ArticleContentCtrl") as! ArticleContentCtrl
         self.navigationController?.pushViewController(articleContentController, animated: true)
+    }
+    
+    func deleteArticle(article: Article) {
+        API.deleteArticle(article)
     }
     
     func sharingOptionsSelected() {
@@ -82,7 +70,7 @@ class ArticleListCrl: UIViewController, ArticleTabManagerProc, ApiProc, UIPopove
         self.presentViewController(activityViewController, animated: true, completion: nil)
     }
     
-    // MARK: Api Protocol functions
+    // MARK: Api Protocol implementation
 
     func didSaveArticles(articles: [Article])
     {

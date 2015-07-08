@@ -93,8 +93,7 @@ public class Core {
     {
         let managedContext = getContext()
         
-        let entity = NSEntityDescription.entityForName("Article", inManagedObjectContext: managedContext)
-        let fetchRequest = NSFetchRequest()
+        let fetchRequest = NSFetchRequest(entityName:"Article")
         
         let predicate_website = NSPredicate(format: "website = %@", website)
         let predicate_title = NSPredicate(format: "title = %@", website)
@@ -102,7 +101,6 @@ public class Core {
         let predicate = NSCompoundPredicate(type: NSCompoundPredicateType.OrPredicateType, subpredicates: [predicate_title, predicate_website])
 
         fetchRequest.predicate = predicate
-        fetchRequest.entity = entity
         
         var error: NSError?
         let count: Int =  managedContext.countForFetchRequest(fetchRequest, error: &error)
@@ -179,6 +177,12 @@ public class Core {
             print("Could not save to core data")
         }
         
+    }
+    
+    func deleteData(article: Article)
+    {
+        let managedContext = getContext()
+        managedContext.deleteObject(article as NSManagedObject)
     }
     
 }

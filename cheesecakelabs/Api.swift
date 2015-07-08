@@ -11,12 +11,16 @@ import SwiftyJSON
 
 public class Api {
     
+    private final let CORE = Core()
     private final let imageCache = NSCache()
     private final let ARTICLES_URL = "http://www.ckl.io/challenge/"
-    private final let CORE = Core()
-    
+    private final let DEFAULT_SORTING = "title"
+
     var apiProcDelegate: ApiProc?
     
+    /**
+    Make this class singleton
+    */
     public class var sharedInstance: Api
     {
         struct Static
@@ -26,17 +30,41 @@ public class Api {
         return Static.instance
     }
     
+    
     func getApiProtocol() -> ApiProc?
     {
         return self.apiProcDelegate
     }
     
-    public func getArticles(completion: (result: JSON) -> Void)
+    /**
+    Gets articles from server and save them as persisten data
+    */
+    public func getArticles()
     {
         Alamofire.request(.GET, URLString: ARTICLES_URL)
             .responseJSON { (_, _, data, _) in
-                let articles = JSON(data!)
-                completion(result: articles)
+                
+                let articles = NSMutableArray()
+                for (_, value) in JSON(data!)
+                {
+                    if let object = value.dictionaryObject {
+                        articles.addObject(object)
+                    }
+                    
+                }
+                self.saveArticles(articles)
+        }
+    }
+    
+    /**
+    Save articles in CoreData and send it  [Article] array to ArticleListCtrl
+    */
+    func saveArticles(articles: NSMutableArray)
+    {
+        if(CORE.createData(articles)) {
+            if let articles = CORE.retriveData(DEFAULT_SORTING) {
+                apiProcDelegate?.articlesSorted(articles)
+            }
         }
     }
     
@@ -63,22 +91,19 @@ public class Api {
         }
     }
     
-    func saveArticles(articles: NSMutableArray)
-    {
-        if(CORE.createData(articles)) {
-            if let articles = CORE.retriveData("title") {
-                apiProcDelegate?.articlesSorted(articles)
-            }
-        }
-
-    }
-        
+    /**
+    Sort Article by title, date, website and authors
+    */
     func sortArticlesBy(sortBy: String)
     {
         if let articles = CORE.retriveData(sortBy)
         {
             apiProcDelegate?.articlesSorted(articles)
         }
+    }
+    
+    func deleteArticle(article: Article) {
+        CORE.deleteData(article)
     }
     
 }

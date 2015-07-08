@@ -26,7 +26,7 @@ class StringDateConversion {
         let dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .MediumStyle
         dateFormatter.timeStyle = .NoStyle
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         dateFormatter.locale = NSLocale(localeIdentifier: "pt_BR")
         dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
         return dateFormatter.stringFromDate(date)

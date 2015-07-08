@@ -41,8 +41,9 @@ class ArticleTableManager: NSObject, UITableViewDelegate, UITableViewDataSource 
         let Cell = tableView.dequeueReusableCellWithIdentifier("ArticleTableViewCell") as! ArticleTableviewCell
         Cell.articleTitle.text = self.articles[indexPath.row].title
         Cell.articleWebsite.text = self.articles[indexPath.row].website
-        Cell.articleDate.text = StringDateConversion.getBRString(self.articles[indexPath.row].date!) as? String
-        
+        if let date = self.articles[indexPath.row].date {
+            Cell.articleDate.text = StringDateConversion.getBRString(date) as? String
+        }
         /**
         If no images available use placeholder
         */
@@ -64,8 +65,8 @@ class ArticleTableManager: NSObject, UITableViewDelegate, UITableViewDataSource 
     {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         protocolDelegate?.articleSelected(self.articles[indexPath.row])
-        let oldCell = tableView.cellForRowAtIndexPath(indexPath)
-        oldCell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
     }
     
     // TODO: Delete from CoreData
@@ -80,6 +81,8 @@ class ArticleTableManager: NSObject, UITableViewDelegate, UITableViewDataSource 
         let deleteRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete", handler:{ action, indexpath in
             self.articles.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            self.protocolDelegate?.deleteArticle(self.articles.removeAtIndex(indexPath.row))
+
         });
         
         return [deleteRowAction, moreRowAction];

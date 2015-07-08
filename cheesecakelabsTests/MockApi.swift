@@ -42,7 +42,10 @@ class MockApi: Api {
                 "authors": "Fran Bellamy",
                 "date": "05/27/2014"
             ],
-            ["website": "Bob", "age": 35]
+            [
+                "website": "Jack",
+                "title": "Restaurant review: Gypsy Apple Bistro in Shelburne Falls one of the region's best"
+            ]
         ]
     }
     /**
@@ -67,49 +70,20 @@ class MockApi: Api {
             []
         ]
     }
-    
+        
     /**
-    :returns: mocked articles json object
-    */
-    func getArticlesMock() -> [AnyObject] {
-        return [
-            [
-                "website": "John",
-                "image": "http://lorempixel.com/400/400/technics/2/",
-                "title": "Restaurant review: Gypsy Apple Bistro in Shelburne Falls one of the region's best",
-                "authors": "Fran Bellamy",
-                "date": "05/27/2014"
-            ]
-        ]
-    }
-    
-    /**
-    :returns: mocked articles json object with nil key, values
-    */
-    func getArticlesWithNilMock() -> [AnyObject] {
-        return [
-            [
-                "website": "John",
-                "authors": "Fran Bellamy",
-                "date": "05/27/2014"
-            ],
-            [
-                "website": "",
-                "image": "http://lorempixel.com/400/400/technics/2/",
-                "title": "Restaurant review: Gypsy Apple Bistro in Shelburne Falls one of the region's best",
-                "authors": "Fran Bellamy",
-                "date": "05/27/2014"
-            ]
-        ]
-    }
-    
-    /**
-    :param: completion: (result: JSON) -> Void
     :returns mocked articles json object
     */
-    override func getArticles(completion: (result: JSON) -> Void) {
-        let articles = JSON(jsonObject)
-        completion(result: articles)
+    override func getArticles() {
+        let articles = NSMutableArray()
+        for (_, value) in JSON(jsonObject)
+        {
+            if let object = value.dictionaryObject {
+                articles.addObject(object)
+            }
+            
+        }
+        self.saveArticles(articles)
     }
     
     override func getArticleImage(url: String, completion: (result: UIImage) -> Void) {

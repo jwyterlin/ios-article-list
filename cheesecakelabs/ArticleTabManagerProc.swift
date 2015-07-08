@@ -12,5 +12,6 @@ Communication protocol between ArticleTableView and ArticleListCtrl
 protocol ArticleTabManagerProc
 {
     func articleSelected(article: Article)
+    func deleteArticle(article: Article)
     func sharingOptionsSelected()
 }

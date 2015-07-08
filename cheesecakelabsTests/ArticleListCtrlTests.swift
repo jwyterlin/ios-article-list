@@ -33,6 +33,14 @@ class HomeCtrlTests: XCTestCase {
         XCTAssertNotNil(articleListCrl!.articleTableview, "articleTableview is nil")
     }
     
+    func testArticleListCtrlConformsToApiProtocol() {
+        XCTAssertTrue(articleListCrl is ApiProc, "articleListCrl does not conform to ApiProtocol")
+    }
+    
+    func testArticleListCtrlConformsToArticleTableViewProtocol() {
+        XCTAssertTrue(articleListCrl is ArticleTabManagerProc, "articleListCrl does not conform to ArticleTableViewProtocol")
+    }
+    
     func testArticleTableViewDataSource() {
         articleListCrl!.viewDidLoad()
         XCTAssertNotNil(articleListCrl!.articleTableview.dataSource,"articleTableView dataSource is nil")
@@ -57,13 +65,34 @@ class HomeCtrlTests: XCTestCase {
         XCTAssertEqual(articleListCrl!.articleTableview.numberOfRowsInSection(0), 0, "Wrong number or rows in articles tableview")
     }
     
-    func testArticleListCtrlConformsToArticleTableViewProtocol() {
-        XCTAssertTrue(articleListCrl is ArticleTabManagerProc, "articleListCrl does not conform to ArticleTableViewProtocol")
+    func testTableViewCellNotNil() {
+        mockAPI.setFullArticles()
+        articleListCrl!.API = mockAPI
+        articleListCrl!.viewDidLoad()
+        articleListCrl!.loadView()
+        let cell = articleListCrl!.articleTableview.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as? ArticleTableviewCell
+        XCTAssertNotNil(cell)
     }
     
-
-    func testArticleListCtrlConformsToApiProtocol() {
-        XCTAssertTrue(articleListCrl is ApiProc, "articleListCrl does not conform to ApiProtocol")
+    func testTableViewCellNil() {
+        mockAPI.setNilArticles()
+        articleListCrl!.API = mockAPI
+        articleListCrl!.viewDidLoad()
+        articleListCrl!.loadView()
+        let cell = articleListCrl!.articleTableview.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as? ArticleTableviewCell
+        XCTAssertNil(cell)
+    }
+    
+    func testShowTitleWebsiteAndDateInTableViewCell() {
+        mockAPI.setFullArticles()
+        articleListCrl!.API = mockAPI
+        articleListCrl!.viewDidLoad()
+        articleListCrl!.loadView()
+        articleListCrl!.articleTableview.selectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: true, scrollPosition: .None)
+        let cell = articleListCrl!.articleTableview.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ArticleTableviewCell
+        XCTAssertEqual(cell.articleWebsite.text!, String("John"))
+        XCTAssertEqual(cell.articleTitle.text!, String("Restaurant review: Gypsy Apple Bistro in Shelburne Falls one of the region's best"))
+        XCTAssertEqual(cell.articleDate.text!, String("27/05/2014"))
     }
 
     func testPerformanceExample() {
