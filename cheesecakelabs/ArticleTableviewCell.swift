@@ -32,7 +32,7 @@ class ArticleTableviewCell: UITableViewCell {
     {
         super.setSelected(selected, animated: animated)
     }
-    
+        
     func updateImage(image: UIImage)
     {
         articleImage.image = image

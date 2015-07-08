@@ -35,11 +35,10 @@ class ArticleListCrl: UIViewController, ArticleTabManagerProc, ApiProc, UIPopove
         articleTableview.delegate = tableviewManager
         articleTableview.dataSource = tableviewManager
         articleTableview.showsVerticalScrollIndicator = false
-        articleTableview.autoresizingMask = UIViewAutoresizing.FlexibleHeight
-        articleTableview.autoresizingMask = UIViewAutoresizing.FlexibleWidth
 
         articleTableview.registerNib(UINib(nibName: "ArticleTableViewCell", bundle: nil), forCellReuseIdentifier: "ArticleTableViewCell")
         self.view.addSubview(articleTableview)
+    
     }
     
     // MARK: ArticleTableView Protocol implementation
@@ -125,7 +124,11 @@ class ArticleListCrl: UIViewController, ArticleTabManagerProc, ApiProc, UIPopove
     {
         articleTableview.frame = self.view.bounds;
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        articleTableview.frame = self.view.bounds;
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
