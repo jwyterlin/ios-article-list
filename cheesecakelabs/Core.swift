@@ -15,7 +15,8 @@ CoreData CRUD helper class
 public class Core {
     
 
-    public func getContext() -> NSManagedObjectContext {
+    public func getContext() -> NSManagedObjectContext
+    {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         return managedContext;
@@ -25,7 +26,8 @@ public class Core {
     - TODO: Use a library to map objects - JSON to swift objects
     check https://github.com/tristanhimmelman/AlamofireObjectMapper
     */
-    func createData(articles: NSMutableArray) -> Bool {
+    func createData(articles: NSMutableArray) -> Bool
+    {
         let managedContext = getContext()
         
         let entity =  NSEntityDescription.entityForName("Article",
@@ -87,7 +89,8 @@ public class Core {
     - parameter title of the website of the article (id would be preferable)
     - returns: int count of duplicates
     */
-    func dataExists(title: String, website: String) -> Int {
+    func dataExists(title: String, website: String) -> Int
+    {
         let managedContext = getContext()
         
         let entity = NSEntityDescription.entityForName("Article", inManagedObjectContext: managedContext)
@@ -116,7 +119,8 @@ public class Core {
     - parameter sort by - title, website, or author. Though is possible to sort by any parameter contained in the Article model
     - returns: Array of Article model
     */
-    func retriveData(sortBy: String) -> [Article]? {
+    func retriveData(sortBy: String) -> [Article]?
+    {
         
         let managedContext = getContext()
         
@@ -151,7 +155,8 @@ public class Core {
     /**
     // TODO: Select Article by title and website and update read field
     */
-    func updateData() {
+    func updateData()
+    {
         let managedContext = getContext()
         let fetchRequest = NSFetchRequest(entityName:"Article")
         let predicate = NSPredicate(format: "website = %@", "Into Mobile")

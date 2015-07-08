@@ -17,18 +17,22 @@ public class Api {
     
     var apiProcDelegate: ApiProc?
     
-    public class var sharedInstance: Api {
-        struct Static {
+    public class var sharedInstance: Api
+    {
+        struct Static
+        {
             static let instance: Api = Api()
         }
         return Static.instance
     }
     
-    func getApiProtocol() -> ApiProc? {
+    func getApiProtocol() -> ApiProc?
+    {
         return self.apiProcDelegate
     }
     
-    public func getArticles(completion: (result: JSON) -> Void) {
+    public func getArticles(completion: (result: JSON) -> Void)
+    {
         Alamofire.request(.GET, URLString: ARTICLES_URL)
             .responseJSON { (_, _, data, _) in
                 let articles = JSON(data!)
@@ -41,7 +45,8 @@ public class Api {
     - parameter url: path to image, callback function
     - returns: returns image or cachedImage
     */
-    func getArticleImage(url: String, completion: (result: UIImage) -> Void) {
+    func getArticleImage(url: String, completion: (result: UIImage) -> Void)
+    {
         if let cachedImage = imageCache.objectForKey(url) as? UIImage
         {
             completion(result: cachedImage)
@@ -58,7 +63,8 @@ public class Api {
         }
     }
     
-    func saveArticles(articles: NSMutableArray) {
+    func saveArticles(articles: NSMutableArray)
+    {
         if(CORE.createData(articles)) {
             if let articles = CORE.retriveData("title") {
                 apiProcDelegate?.articlesSorted(articles)
@@ -67,8 +73,10 @@ public class Api {
 
     }
         
-    func sortArticlesBy(sortBy: String){
-        if let articles = CORE.retriveData(sortBy) {
+    func sortArticlesBy(sortBy: String)
+    {
+        if let articles = CORE.retriveData(sortBy)
+        {
             apiProcDelegate?.articlesSorted(articles)
         }
     }

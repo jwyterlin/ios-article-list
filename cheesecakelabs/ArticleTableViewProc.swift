@@ -6,6 +6,11 @@
 //  Copyright (c) 2015 Coruja Virtual. All rights reserved.
 //
 
-protocol ArticleTableViewProc {
+/**
+Communication protocol between ArticleTableView and ArticleListCtrl
+*/
+protocol ArticleTableViewProc
+{
     func articleSelected(article: Article)
+    func sharingOptionsSelected()
 }

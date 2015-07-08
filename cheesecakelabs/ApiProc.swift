@@ -6,7 +6,8 @@
 //  Copyright © 2015 Coruja Virtual. All rights reserved.
 //
 
-protocol ApiProc {
+protocol ApiProc
+{
     func didSaveArticles(articles: [Article])
     func articlesSorted(articles: [Article])
 }

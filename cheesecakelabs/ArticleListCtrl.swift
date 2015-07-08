@@ -13,34 +13,30 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, ApiProc, UIPopover
     var API: Api = Api.sharedInstance
     var articleTableview: ArticleTableview = ArticleTableview(frame: CGRectZero, style: UITableViewStyle.Plain)
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         self.title = "Articles"
-        
-        API.apiProcDelegate = self
-        
-        updateTableViewDimentions()
+        self.navigationController?.navigationBar.translucent = false;
 
+        API.apiProcDelegate = self
         articleTableview.protocolDelegate = self
         
+        updateTableViewDimentions()
         getArticles()
         
-        self.navigationController?.navigationBar.translucent = false;
     }
     
-    func updateTableViewDimentions() {
-        
-        articleTableview.frame = CGRectMake(0,
-            0,
-            self.view.bounds.width,
-            self.view.bounds.height)
+    func updateTableViewDimentions()
+    {
+        articleTableview.frame = self.view.bounds;
+        articleTableview.autoresizingMask = UIViewAutoresizing.FlexibleHeight
         self.view.addSubview(articleTableview)
-        
-        
     }
     
-    func getArticles() {
+    func getArticles()
+    {
         API.getArticles({
             result in
             let articles = NSMutableArray()
@@ -55,32 +51,60 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, ApiProc, UIPopover
         })
     }
     
-    func articleSelected(article: Article) {
+    // MARK: ArticleTableView Protocol functions
+    
+    func articleSelected(article: Article)
+    {
         let articleContentController = self.storyboard?.instantiateViewControllerWithIdentifier("ArticleContentCtrl") as! ArticleContentCtrl
         self.navigationController?.pushViewController(articleContentController, animated: true)
     }
     
-    func didSaveArticles(articles: [Article]) {
+    func sharingOptionsSelected() {
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [], applicationActivities: nil)
+        
+        activityViewController.excludedActivityTypes = [
+            UIActivityTypePostToWeibo,
+            UIActivityTypePrint,
+            UIActivityTypeAssignToContact,
+            UIActivityTypeSaveToCameraRoll,
+            UIActivityTypeAddToReadingList,
+            UIActivityTypePostToFlickr,
+            UIActivityTypePostToVimeo,
+            UIActivityTypePostToTencentWeibo
+        ]
+        
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
+    // MARK: Api Protocol functions
+
+    func didSaveArticles(articles: [Article])
+    {
         self.articleTableview.addArticles(articles)
         self.articleTableview.reloadData()
     }
     
-    func articlesSorted(sortedArticles: [Article]) {
+    func articlesSorted(sortedArticles: [Article])
+    {
         self.articleTableview.addArticles(sortedArticles)
         self.articleTableview.reloadData()
     }
     
+    // MARK:
     /**
     Force popover presentation on iPhone
     */
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle
+    {
         return UIModalPresentationStyle.None
     }
     
     /**
     Force popover presentation on iPhone
     */
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         if segue.identifier == "SortPopover" {
             let popoverViewController = segue.destinationViewController as UIViewController
             popoverViewController.modalPresentationStyle = UIModalPresentationStyle.Popover

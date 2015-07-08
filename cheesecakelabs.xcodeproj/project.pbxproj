@@ -188,7 +188,6 @@
 		587DB5311B4A953C00956D85 /* cheesecakelabs */ = {
 			isa = PBXGroup;
 			children = (
-				58D08BE61B4C1C0700B6A3F0 /* assets */,
 				584035491B4BAB1D009D39FA /* helper */,
 				58425DB01B4A9EFB00461071 /* model */,
 				58425DA91B4A989100461071 /* protocol */,
@@ -236,13 +235,6 @@
 				5840354E1B4BD54A009D39FA /* CoreDataHelpers.swift */,
 			);
 			name = helperTests;
-			sourceTree = "<group>";
-		};
-		58D08BE61B4C1C0700B6A3F0 /* assets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = assets;
 			sourceTree = "<group>";
 		};
 		58DD1BE01B4A9656005FACE9 /* controller */ = {

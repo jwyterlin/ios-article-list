@@ -16,25 +16,28 @@ class ArticleTableviewCell: UITableViewCell {
     @IBOutlet weak var articleDate: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    override func awakeFromNib() {
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
         articleImage.layer.cornerRadius = 45
         articleImage.layer.masksToBounds = true
         articleImage.clipsToBounds = true
-    
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(selected: Bool, animated: Bool)
+    {
         super.setSelected(selected, animated: animated)
     }
     
-    func updateImage(image: UIImage) {
+    func updateImage(image: UIImage)
+    {
         articleImage.image = image
         activityIndicator.stopAnimating()
         activityIndicator.hidden = true
     }
     
-    func placeHolderImage() {
+    func placeHolderImage()
+    {
         articleImage.image = UIImage(named: "article-image-placeholder")
         activityIndicator.stopAnimating()
         activityIndicator.hidden = true
