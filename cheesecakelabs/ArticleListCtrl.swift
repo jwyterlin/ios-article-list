@@ -45,6 +45,7 @@ class ArticleListCrl: UIViewController, ArticleTabManagerProc, ApiProc, UIPopove
     func articleSelected(article: Article)
     {
         let articleContentController = self.storyboard?.instantiateViewControllerWithIdentifier("ArticleContentCtrl") as! ArticleContentCtrl
+        articleContentController.article = article
         self.navigationController?.pushViewController(articleContentController, animated: true)
     }
     

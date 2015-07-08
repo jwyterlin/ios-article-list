@@ -39,9 +39,13 @@ class ArticleTableManager: NSObject, UITableViewDelegate, UITableViewDataSource 
     {
         
         let Cell = tableView.dequeueReusableCellWithIdentifier("ArticleTableViewCell") as! ArticleTableviewCell
+        
         Cell.articleTitle.text = self.articles[indexPath.row].title
         Cell.articleWebsite.text = self.articles[indexPath.row].website
         Cell.articleAuthor.text = self.articles[indexPath.row].authors
+        Cell.articleImage.image = nil
+        Cell.activityIndicator.startAnimating()
+
         if let date = self.articles[indexPath.row].date {
             Cell.articleDate.text = StringDateConversion.getBRString(date) as? String
         }
@@ -65,7 +69,7 @@ class ArticleTableManager: NSObject, UITableViewDelegate, UITableViewDataSource 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        protocolDelegate?.articleSelected(self.articles[indexPath.row])
+        protocolDelegate?.articleSelected(self.articles[indexPath.row] as Article)
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
     }
