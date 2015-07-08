@@ -32,8 +32,6 @@ class ArticleContentCtrlTests: XCTestCase {
     
     func testViewDidLoad() {
         articleContenttCrl!.article = mockAPI.getArticleObject()
-        articleContenttCrl!.loadView()
-        articleContenttCrl!.viewDidLoad()
         XCTAssertNotNil(articleContenttCrl?.article)
     }
     
