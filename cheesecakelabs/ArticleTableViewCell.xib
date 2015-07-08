@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -20,18 +21,6 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="De0-AE-zX0">
-                        <rect key="frame" x="6" y="5" width="90" height="90"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SaT-Fz-YJC">
-                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                            </imageView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="90" id="COL-31-zcx"/>
-                            <constraint firstAttribute="height" constant="90" id="fvj-zz-rD5"/>
-                        </constraints>
-                    </stackView>
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cFf-Er-cfw">
                         <rect key="frame" x="41" y="40" width="20" height="20"/>
                     </activityIndicatorView>
@@ -56,6 +45,9 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SaT-Fz-YJC">
+                        <rect key="frame" x="8" y="4" width="90" height="90"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="yLY-Qf-4gN" firstAttribute="leading" secondItem="tGF-gN-7Fz" secondAttribute="leadingMargin" constant="107" id="1tU-Ea-eoL"/>

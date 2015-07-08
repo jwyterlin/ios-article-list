@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+Custom UITableViewCell for displaying an article
+*/
 class ArticleTableviewCell: UITableViewCell {
     
     @IBOutlet weak var articleImage: UIImageView!
