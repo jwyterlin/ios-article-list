@@ -36,6 +36,8 @@ class ArticleListCrl: UIViewController, ArticleTabManagerProc, ApiProc, UIPopove
         articleTableview.dataSource = tableviewManager
         articleTableview.showsVerticalScrollIndicator = false
         articleTableview.autoresizingMask = UIViewAutoresizing.FlexibleHeight
+        articleTableview.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+
         articleTableview.registerNib(UINib(nibName: "ArticleTableViewCell", bundle: nil), forCellReuseIdentifier: "ArticleTableViewCell")
         self.view.addSubview(articleTableview)
     }
