@@ -74,19 +74,21 @@ class ArticleTableManager: NSObject, UITableViewDelegate, UITableViewDataSource 
         cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
     }
     
+    /**
+    Enables Delete and Share buttons in the tableviewCell 
+    */
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?
     {
-        
         let moreRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Share", handler:{ action, indexpath in
             self.protocolDelegate?.sharingOptionsSelected()
         });
+        
         moreRowAction.backgroundColor = UIColor.brownColor()
         
         let deleteRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete", handler:{ action, indexpath in
+            self.protocolDelegate?.deleteArticle(self.articles[indexPath.row])
             self.articles.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-            self.protocolDelegate?.deleteArticle(self.articles.removeAtIndex(indexPath.row))
-
         });
         
         return [deleteRowAction, moreRowAction];

@@ -69,8 +69,18 @@ class ArticleListCrl: UIViewController, ArticleTabManagerProc, ApiProc, UIPopove
             UIActivityTypePostToTencentWeibo
         ]
         
-        activityViewController.popoverPresentationController!.sourceView = self.view;
-        self.presentViewController(activityViewController, animated: true, completion: nil)
+        /**
+        Avoid crash in iPads when presenting UIActivityViewController
+        */
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone)
+        {
+            self.presentViewController(activityViewController, animated: true, completion: nil)
+        }
+            else
+        {
+            let popoverCntlr = UIPopoverController(contentViewController: activityViewController)
+            popoverCntlr.presentPopoverFromRect(CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height/4, 0, 0), inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+        }
 
     }
     

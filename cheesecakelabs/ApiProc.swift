@@ -6,6 +6,9 @@
 //  Copyright © 2015 Coruja Virtual. All rights reserved.
 //
 
+/**
+Communication protocol between ArticleListCtrl and Api
+*/
 protocol ApiProc
 {
     func didSaveArticles(articles: [Article])

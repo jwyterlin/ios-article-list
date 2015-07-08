@@ -9,7 +9,7 @@
 import XCTest
 @testable import cheesecakelabs
 
-class HomeCtrlTests: XCTestCase {
+class ArticleListCtrlTests: XCTestCase {
 
     var articleListCrl: ArticleListCrl?
     let mockAPI = MockApi.sharedInstance

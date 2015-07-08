@@ -13,6 +13,8 @@ class ArticleContentCtrl: UIViewController {
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var articleImage: UIImageView!
     @IBOutlet weak var articleContent: UITextView!
+    @IBOutlet weak var articleAuthor: UILabel!
+    @IBOutlet weak var articleDate: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var articleImageBackground: UIView!
@@ -27,6 +29,8 @@ class ArticleContentCtrl: UIViewController {
         articleImage.layer.masksToBounds = true
         articleImage.clipsToBounds = true
         articleTitle.text = article!.valueForKey("title") as? String
+        articleAuthor.text = article?.authors
+        articleDate.text = StringDateConversion.getBRString((article?.date)!) as! String
         articleContent.text = article?.content
         articleContent.font = UIFont(name: "Helvetica Neue", size: 18)
         if let image = article!.image
