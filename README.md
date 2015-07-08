@@ -6,9 +6,7 @@ Articles are requested from server in JSON format and stored in CoreData as pers
 
 Build in Xcode 7 Beta with Swift 2.0.
 
-__Status:__
-
-Under development.
+Tested in simulators only. Platforms >= 8
 
 ###__Frameworks used:__
 
