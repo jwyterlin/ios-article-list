@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ArticleListCrl: UIViewController, ArticleTableViewProc, ApiProc, UIPopoverPresentationControllerDelegate {
+class ArticleListCrl: UIViewController, ArticleTabManagerProc, ApiProc, UIPopoverPresentationControllerDelegate {
     
     var API: Api = Api.sharedInstance
-    var articleTableview: ArticleTableview = ArticleTableview(frame: CGRectZero, style: UITableViewStyle.Plain)
+    var articleTableview = UITableView(frame: CGRectZero, style: .Plain)
+    var tableviewManager = ArticleTableManager()
     
     override func viewDidLoad()
     {
@@ -21,17 +22,21 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, ApiProc, UIPopover
         self.navigationController?.navigationBar.translucent = false;
 
         API.apiProcDelegate = self
-        articleTableview.protocolDelegate = self
+        tableviewManager.protocolDelegate = self
         
-        updateTableViewDimentions()
+        configureArticleTableView()
         getArticles()
         
     }
     
-    func updateTableViewDimentions()
+    func configureArticleTableView()
     {
-        articleTableview.frame = self.view.bounds;
+        articleTableview = UITableView(frame: CGRectZero, style: .Plain)
+        articleTableview.delegate = tableviewManager
+        articleTableview.dataSource = tableviewManager
+        articleTableview.showsVerticalScrollIndicator = false
         articleTableview.autoresizingMask = UIViewAutoresizing.FlexibleHeight
+        articleTableview.registerNib(UINib(nibName: "ArticleTableViewCell", bundle: nil), forCellReuseIdentifier: "ArticleTableViewCell")
         self.view.addSubview(articleTableview)
     }
     
@@ -81,13 +86,13 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, ApiProc, UIPopover
 
     func didSaveArticles(articles: [Article])
     {
-        self.articleTableview.addArticles(articles)
+        self.tableviewManager.addArticles(articles)
         self.articleTableview.reloadData()
     }
     
     func articlesSorted(sortedArticles: [Article])
     {
-        self.articleTableview.addArticles(sortedArticles)
+        self.tableviewManager.addArticles(sortedArticles)
         self.articleTableview.reloadData()
     }
     
@@ -114,7 +119,7 @@ class ArticleListCrl: UIViewController, ArticleTableViewProc, ApiProc, UIPopover
     
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation:      UIInterfaceOrientation, duration: NSTimeInterval)
     {
-        updateTableViewDimentions()
+        articleTableview.frame = self.view.bounds;
     }
 
     override func didReceiveMemoryWarning() {

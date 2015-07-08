@@ -9,7 +9,7 @@
 /**
 Communication protocol between ArticleTableView and ArticleListCtrl
 */
-protocol ArticleTableViewProc
+protocol ArticleTabManagerProc
 {
     func articleSelected(article: Article)
     func sharingOptionsSelected()

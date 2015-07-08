@@ -9,32 +9,15 @@
 import UIKit
 
 /**
-    UITabeview Class that serves as its own delegate and datasource
-
-    Usually the controller is the delegate and datasource, but this can easely make the file bigger.
-    There are other patterns where the UITableViewDelegate and UITableViewDatasource are on a separate class
-    other than the UITableView and UIViewController.
+Usually the controller is the delegate and datasource, but this can easely make the file bigger.
+There are other patterns where the UITableViewDelegate and UITableViewDatasource are on a separate class
+other than the UITableView and UIViewController.
 */
-class ArticleTableview: UITableView, UITableViewDelegate, UITableViewDataSource {
+class ArticleTableManager: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     var API = Api.sharedInstance
     var protocolDelegate: ArticleTabManagerProc?
     var articles: [Article] = [Article]()
-    
-    override init(frame: CGRect, style: UITableViewStyle)
-    {
-        super.init(frame: frame, style: style)
-        self.delegate = self
-        self.dataSource = self
-        self.showsVerticalScrollIndicator = false
-        let nib = UINib(nibName: "ArticleTableViewCell", bundle: nil)
-        self.registerNib(nib, forCellReuseIdentifier: "ArticleTableViewCell")
-    }
-    
-    required init(coder aDecoder: NSCoder)
-    {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     func addArticles(articlesArray: [Article])
     {
@@ -55,11 +38,11 @@ class ArticleTableview: UITableView, UITableViewDelegate, UITableViewDataSource 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         
-        let Cell = self.dequeueReusableCellWithIdentifier("ArticleTableViewCell") as! ArticleTableviewCell
+        let Cell = tableView.dequeueReusableCellWithIdentifier("ArticleTableViewCell") as! ArticleTableviewCell
         Cell.articleTitle.text = self.articles[indexPath.row].title
         Cell.articleWebsite.text = self.articles[indexPath.row].website
         Cell.articleDate.text = StringDateConversion.getBRString(self.articles[indexPath.row].date!) as? String
-
+        
         /**
         If no images available use placeholder
         */
@@ -96,12 +79,11 @@ class ArticleTableview: UITableView, UITableViewDelegate, UITableViewDataSource 
         
         let deleteRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete", handler:{ action, indexpath in
             self.articles.removeAtIndex(indexPath.row)
-            self.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         });
-        
         
         return [deleteRowAction, moreRowAction];
     }
-
+    
     
 }

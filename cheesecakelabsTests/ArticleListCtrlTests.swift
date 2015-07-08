@@ -33,6 +33,16 @@ class HomeCtrlTests: XCTestCase {
         XCTAssertNotNil(articleListCrl!.articleTableview, "articleTableview is nil")
     }
     
+    func testArticleTableViewDataSource() {
+        articleListCrl!.viewDidLoad()
+        XCTAssertNotNil(articleListCrl!.articleTableview.dataSource,"articleTableView dataSource is nil")
+    }
+    
+    func testArticleTableviewDelegateSet() {
+        articleListCrl!.viewDidLoad()
+        XCTAssertNotNil(articleListCrl!.articleTableview.delegate,"articleTableView dataSource is nil")
+    }
+    
     func testAddArticlesToTableView() {
         mockAPI.setFullArticles()
         articleListCrl!.API = mockAPI
@@ -48,8 +58,9 @@ class HomeCtrlTests: XCTestCase {
     }
     
     func testArticleListCtrlConformsToArticleTableViewProtocol() {
-        XCTAssertTrue(articleListCrl is ArticleTableViewProc, "articleListCrl does not conform to ArticleTableViewProtocol")
+        XCTAssertTrue(articleListCrl is ArticleTabManagerProc, "articleListCrl does not conform to ArticleTableViewProtocol")
     }
+    
 
     func testArticleListCtrlConformsToApiProtocol() {
         XCTAssertTrue(articleListCrl is ApiProc, "articleListCrl does not conform to ApiProtocol")
