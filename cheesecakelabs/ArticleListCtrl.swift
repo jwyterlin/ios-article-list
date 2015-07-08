@@ -52,6 +52,7 @@ class ArticleListCrl: UIViewController, ArticleTabManagerProc, ApiProc, UIPopove
         API.deleteArticle(article)
     }
     
+    // FIXME: Fix debbuger complaints
     func sharingOptionsSelected() {
         let activityViewController : UIActivityViewController = UIActivityViewController(
             activityItems: [], applicationActivities: nil)
@@ -67,7 +68,9 @@ class ArticleListCrl: UIViewController, ArticleTabManagerProc, ApiProc, UIPopove
             UIActivityTypePostToTencentWeibo
         ]
         
+        activityViewController.popoverPresentationController!.sourceView = self.view;
         self.presentViewController(activityViewController, animated: true, completion: nil)
+
     }
     
     // MARK: Api Protocol implementation
