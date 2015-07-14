@@ -75,10 +75,27 @@ class MockApi: Api {
         let article = Article(entity: getEntityDescription()!, insertIntoManagedObjectContext: setUpInMemoryManagedObjectContext())
         article.title = "John"
         article.image = "http://lorempixel.com/400/400/technics/2/"
-        article.content = "Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ut eleifend ligula. Aliquam mattis dui nec est semper, vel dignissim enim pulvinar. In pharetra vel neque sodales finibus. Cras euismod lorem mi, ac consectetur ipsum auctor quis. Vivamus condimentum placerat augue rhoncus volutpat. Phasellus porta dolor eu tellus efficitur vehicula ornare vitae diam. Sed est est, luctus sit amet lobortis vitae, sagittis et sapien. Sed et tellus libero."
+        article.content = "my content"
         article.authors =  "Fran Bellamy"
         article.date = StringDateConversion.getNSDate("05/27/2014")
         return article
+    }
+    
+    func getArticleWithNilValues() -> Article {
+        let article = Article(entity: getEntityDescription()!, insertIntoManagedObjectContext: setUpInMemoryManagedObjectContext())
+        return article
+    }
+    
+    func getArticleObjectArray() -> [Article] {
+        let article = Article(entity: getEntityDescription()!, insertIntoManagedObjectContext: setUpInMemoryManagedObjectContext())
+        article.title = "John"
+        article.image = "http://lorempixel.com/400/400/technics/2/"
+        article.content = "Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ut eleifend ligula. Aliquam mattis dui nec est semper, vel dignissim enim pulvinar. In pharetra vel neque sodales finibus. Cras euismod lorem mi, ac consectetur ipsum auctor quis. Vivamus condimentum placerat augue rhoncus volutpat. Phasellus porta dolor eu tellus efficitur vehicula ornare vitae diam. Sed est est, luctus sit amet lobortis vitae, sagittis et sapien. Sed et tellus libero."
+        article.authors =  "Fran Bellamy"
+        article.date = StringDateConversion.getNSDate("05/27/2014")
+        var articleArray = [Article]()
+        articleArray.append(article)
+        return articleArray
     }
     
     /**

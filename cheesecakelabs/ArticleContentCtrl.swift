@@ -19,7 +19,7 @@ class ArticleContentCtrl: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var articleImageBackground: UIView!
     
-    let API = Api.sharedInstance
+    var API = Api.sharedInstance
     var article: Article?
     
     override func viewDidLoad()
@@ -28,12 +28,16 @@ class ArticleContentCtrl: UIViewController {
         articleImage.layer.cornerRadius = 190
         articleImage.layer.masksToBounds = true
         articleImage.clipsToBounds = true
-        articleTitle.text = article!.valueForKey("title") as? String
-        articleAuthor.text = article?.authors
-        articleDate.text = StringDateConversion.getBRString((article?.date)!) as! String
-        articleContent.text = article?.content
+        articleTitle.text = article!.title
+        articleAuthor.text = article!.authors
+        articleContent.text = article!.content
         articleContent.font = UIFont(name: "Helvetica Neue", size: 18)
-        if let image = article!.image
+        
+        if let date = article?.date {
+            articleDate.text = StringDateConversion.getBRString(date) as? String
+        }
+        
+        if let image = article?.image
         {
             API.getArticleImage(image, completion: {
                 result in

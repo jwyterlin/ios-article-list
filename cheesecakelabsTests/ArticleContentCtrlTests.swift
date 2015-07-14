@@ -14,11 +14,19 @@ import XCTest
 class ArticleContentCtrlTests: XCTestCase {
 
     var articleContenttCrl: ArticleContentCtrl?
+    
     let mockAPI = MockApi.sharedInstance
     
     override func setUp() {
         super.setUp()
-        articleContenttCrl = ArticleContentCtrl()
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        articleContenttCrl = storyboard.instantiateViewControllerWithIdentifier("ArticleContentCtrl") as? ArticleContentCtrl
+    }
+    
+    override func tearDown() {
+        articleContenttCrl = nil
+        super.tearDown()
     }
     
     func testControllerNotNil() {
@@ -30,23 +38,29 @@ class ArticleContentCtrlTests: XCTestCase {
         XCTAssertNotNil(articleContenttCrl?.article)
     }
     
-    func testViewDidLoad() {
+    // More than one assert...but it's ok in this case
+    func testViewDidLoadArticle() {
+        articleContenttCrl!.API =  mockAPI
         articleContenttCrl!.article = mockAPI.getArticleObject()
-        XCTAssertNotNil(articleContenttCrl?.article)
+        articleContenttCrl!.loadView()
+        articleContenttCrl!.viewDidLoad()
+        XCTAssertEqual((articleContenttCrl?.articleTitle.text)!, "John")
+        XCTAssertEqual((articleContenttCrl?.articleAuthor.text)!, "Fran Bellamy")
+        XCTAssertEqual((articleContenttCrl?.articleContent.text)!, NSString(string: "my content"))
+        XCTAssertEqual((articleContenttCrl?.articleDate.text)!, NSString(string: "27/05/2014"))
+        XCTAssertNotNil(articleContenttCrl?.articleImage.image)
     }
     
-    //TODO FIX IBOutlets being nil on viewDidLoad()
-    func testViewDidLoad2() {
-//        articleContenttCrl!.article = mockAPI.getArticleObject()
-//        articleContenttCrl?.view
-//        articleContenttCrl!.loadView()
-//        articleContenttCrl!.viewDidLoad()
-//        XCTAssertNotNil(articleContenttCrl?.articleTitle)
-    }
-    
-    override func tearDown() {
-        articleContenttCrl = nil
-        super.tearDown()
+    // More than one assert...but it's ok in this case
+    func testViewDidLoadArticleWithNilValues() {
+        articleContenttCrl!.article = mockAPI.getArticleWithNilValues()
+        articleContenttCrl!.loadView()
+        articleContenttCrl!.viewDidLoad()
+        XCTAssertEqual(String(articleContenttCrl?.articleTitle.text), "nil")
+        XCTAssertEqual(String(articleContenttCrl?.articleAuthor.text), "nil")
+        XCTAssertEqual((articleContenttCrl?.articleContent.text)!, NSString(string: ""))
+        XCTAssertEqual((articleContenttCrl?.articleDate.text)!, NSString(string: "Date"))
+        XCTAssertNotNil(articleContenttCrl?.articleImage.image)
     }
 
 }
