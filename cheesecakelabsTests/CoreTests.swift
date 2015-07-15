@@ -18,6 +18,7 @@ class CoreTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        CORE.setManagedContext(setUpInMemoryManagedObjectContext()!)
     }
     
     override func tearDown() {
@@ -26,25 +27,31 @@ class CoreTests: XCTestCase {
     }
     
     func testManagedContextNotNil() {
-        CORE.setManagedContext(setUpInMemoryManagedObjectContext()!)
         XCTAssertNotNil(CORE.managedContext)
     }
     
     func testCreateData() {
-        
-        var article = getArticlesMock()
-        let articleArray = NSMutableArray()
-        articleArray.addObject(article)
-        CORE.createData(articleArray)
-        
+        mockApi.setFullArticles()
+        let articleArray = mockApi.getArticlesForCoreData()
+        XCTAssertTrue(CORE.createData(articleArray))        
     }
 
     func testRetriveData() {
-        
+        mockApi.setFullArticles()
+        let articleArray = mockApi.getArticlesForCoreData()
+        CORE.createData(articleArray)
+        print(CORE.retriveData("website")!.count)
+        XCTAssertTrue(CORE.retriveData("website")!.count > 0)
     }
     
-    func testUpdateData() {
-        
+    func testDeleteData() {
+        mockApi.setFullArticles()
+        let articleArray = mockApi.getArticlesForCoreData()
+        CORE.createData(articleArray)
+        var article = CORE.retriveData("website")
+        CORE.deleteData((article?.first)!)
+        CORE.deleteData((article?.last)!)
+        XCTAssertTrue(CORE.retriveData("website")!.count == 0)
     }
 
     func testPerformanceExample() {

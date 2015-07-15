@@ -17,6 +17,10 @@ public class Core {
 
     var managedContext: NSManagedObjectContext?
     
+    /*
+    * Inject an In Memory Managed Object Context in order to unit test this class
+    * without doing CRUD operations with the "real" NSManagedObjectContext and its objects
+    */
     func setManagedContext(context: NSManagedObjectContext) {
         managedContext = context
     }
@@ -47,8 +51,9 @@ public class Core {
         /**
         Loop through articles array
         */
-        for item in articles
+        for item: AnyObject in articles
         {
+            
             /**
             Check if data exists in CoreData before saving it
             */
@@ -164,7 +169,7 @@ public class Core {
     /**
     // TODO: Select Article by title and website and update read field
     */
-    func updateData()
+    func updateData(title: String, website: String) -> Bool
     {
         let managedContext = getContext()
         let fetchRequest = NSFetchRequest(entityName:"Article")
@@ -182,10 +187,14 @@ public class Core {
             article.setValue(true, forKey: "read")
             
             try managedContext.save()
+            
+            return true
 
         } catch {
             
             print("Could not save to core data")
+            
+            return false
         }
         
     }

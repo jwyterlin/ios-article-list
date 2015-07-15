@@ -37,15 +37,3 @@ func getEntityDescription() -> NSEntityDescription? {
     let entity = NSEntityDescription.entityForName("Article", inManagedObjectContext: setUpInMemoryManagedObjectContext()!)
     return entity
 }
-
-func getArticlesMock() -> [[String:String]] {
-    return [
-        [
-            "website": "John",
-            "image": "http://lorempixel.com/400/400/technics/2/",
-            "title": "Restaurant review: Gypsy Apple Bistro in Shelburne Falls one of the region's best",
-            "authors": "Fran Bellamy",
-            "date": "05/27/2014"
-        ]
-    ]
-}

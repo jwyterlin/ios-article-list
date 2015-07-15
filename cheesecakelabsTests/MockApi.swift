@@ -99,6 +99,22 @@ class MockApi: Api {
     }
     
     /**
+    - TODO: move this function to a separate helper class
+    :returns mocked articles json object for unit testing coredata
+    */
+    func getArticlesForCoreData() -> NSMutableArray{
+        let articles = NSMutableArray()
+        for (_, value) in JSON(jsonObject)
+        {
+            if let object = value.dictionaryObject {
+                articles.addObject(object)
+            }
+            
+        }
+        return articles
+    }
+    
+    /**
     :returns mocked articles json object
     */
     override func getArticles() {
