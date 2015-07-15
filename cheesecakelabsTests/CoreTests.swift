@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import CoreData
 
 @testable import cheesecakelabs
 
@@ -14,10 +15,9 @@ class CoreTests: XCTestCase {
 
     let CORE = Core()
     let mockApi = MockApi.sharedInstance
-    
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
@@ -25,11 +25,20 @@ class CoreTests: XCTestCase {
         super.tearDown()
     }
     
-    func testCreateData() {
+    func testManagedContextNotNil() {
+        CORE.setManagedContext(setUpInMemoryManagedObjectContext()!)
+        XCTAssertNotNil(CORE.managedContext)
+    }
     
+    func testCreateData() {
+        
+        var article = getArticlesMock()
+        let articleArray = NSMutableArray()
+        articleArray.addObject(article)
+        CORE.createData(articleArray)
+        
     }
 
-    
     func testRetriveData() {
         
     }

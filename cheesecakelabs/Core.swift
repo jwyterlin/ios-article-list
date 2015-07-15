@@ -15,11 +15,22 @@ CoreData CRUD helper class
 public class Core {
     
 
-    public func getContext() -> NSManagedObjectContext
+    var managedContext: NSManagedObjectContext?
+    
+    func setManagedContext(context: NSManagedObjectContext) {
+        managedContext = context
+    }
+    
+    func getContext() -> NSManagedObjectContext
     {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        return managedContext;
+        if managedContext == nil
+        {
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            managedContext = appDelegate.managedObjectContext
+            return managedContext!;
+        } else {
+            return managedContext!
+        }
     }
     
     /**
