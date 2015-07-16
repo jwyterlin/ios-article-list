@@ -20,6 +20,7 @@
 		58425DAF1B4A9CD300461071 /* ArticleContentCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DAE1B4A9CD300461071 /* ArticleContentCtrl.swift */; };
 		58425DBA1B4AA17400461071 /* MockApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DB91B4AA17400461071 /* MockApi.swift */; };
 		58425DBC1B4AA76D00461071 /* ArticleListCtrlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58425DBB1B4AA76D00461071 /* ArticleListCtrlTests.swift */; };
+		585466DE1B578570000D00D1 /* StringDateConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585466DD1B578570000D00D1 /* StringDateConversionTests.swift */; };
 		587DB5331B4A953C00956D85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DB5321B4A953C00956D85 /* AppDelegate.swift */; };
 		587DB5381B4A953C00956D85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587DB5361B4A953C00956D85 /* Main.storyboard */; };
 		587DB53B1B4A953C00956D85 /* cheesecakelabs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 587DB5391B4A953C00956D85 /* cheesecakelabs.xcdatamodeld */; };
@@ -69,6 +70,7 @@
 		58425DAE1B4A9CD300461071 /* ArticleContentCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleContentCtrl.swift; sourceTree = "<group>"; };
 		58425DB91B4AA17400461071 /* MockApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockApi.swift; sourceTree = "<group>"; };
 		58425DBB1B4AA76D00461071 /* ArticleListCtrlTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListCtrlTests.swift; sourceTree = "<group>"; };
+		585466DD1B578570000D00D1 /* StringDateConversionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringDateConversionTests.swift; sourceTree = "<group>"; };
 		587DB52F1B4A953C00956D85 /* cheesecakelabs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cheesecakelabs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587DB5321B4A953C00956D85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		587DB5371B4A953C00956D85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				58BD30E21B4B0D7B00F66430 /* SortTableViewCtrlTests.swift */,
 				5840354C1B4BD3E3009D39FA /* CoreTests.swift */,
 				587DB54C1B4A953D00956D85 /* Info.plist */,
+				585466DD1B578570000D00D1 /* StringDateConversionTests.swift */,
 			);
 			path = cheesecakelabsTests;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585466DE1B578570000D00D1 /* StringDateConversionTests.swift in Sources */,
 				5840354F1B4BD54A009D39FA /* CoreDataHelpers.swift in Sources */,
 				58C1446A1B4D7D5E00833CA7 /* ArticleContentCtrlTests.swift in Sources */,
 				58425DBA1B4AA17400461071 /* MockApi.swift in Sources */,

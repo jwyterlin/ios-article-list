@@ -83,7 +83,7 @@ class ArticleListCtrlTests: XCTestCase {
         XCTAssertNil(cell)
     }
     
-    func testShowTitleWebsiteAndDateInTableViewCell() {
+    func testShowTitleWebsiteAuthorsAndDateInTableViewCell() {
         mockAPI.setFullArticles()
         articleListCrl!.API = mockAPI
         articleListCrl!.viewDidLoad()
@@ -92,6 +92,7 @@ class ArticleListCtrlTests: XCTestCase {
         let cell = articleListCrl!.articleTableview.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ArticleTableviewCell
         XCTAssertEqual(cell.articleWebsite.text!, String("John"))
         XCTAssertEqual(cell.articleTitle.text!, String("Restaurant review: Gypsy Apple Bistro in Shelburne Falls one of the region's best"))
+        XCTAssertEqual(cell.articleAuthor.text!, String("Fran Bellamy"))
         XCTAssertEqual(cell.articleDate.text!, String("27/05/2014"))
     }
 
