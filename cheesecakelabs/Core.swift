@@ -17,9 +17,9 @@ public class Core {
 
     var managedContext: NSManagedObjectContext?
     
-    /*
-    * Inject an In Memory Managed Object Context in order to unit test this class
-    * without doing CRUD operations with the "real" NSManagedObjectContext and its objects
+    /**
+     Inject an In Memory Managed Object Context in order to unit test this class
+     without doing CRUD operations with the "real" NSManagedObjectContext and its objects
     */
     func setManagedContext(context: NSManagedObjectContext) {
         managedContext = context
@@ -37,10 +37,7 @@ public class Core {
         }
     }
     
-    /**
-    - TODO: Use a library to map objects - JSON to swift objects
-    check https://github.com/tristanhimmelman/AlamofireObjectMapper
-    */
+
     func createData(articles: NSMutableArray) -> Bool
     {
         let managedContext = getContext()
@@ -167,7 +164,7 @@ public class Core {
     }
     
     /**
-    // TODO: Select Article by title and website and update read field
+    - TODO: Select Article by title and website and update read field
     */
     func updateData(title: String, website: String) -> Bool
     {

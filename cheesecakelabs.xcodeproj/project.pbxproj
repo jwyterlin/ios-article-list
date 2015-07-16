@@ -128,6 +128,7 @@
 		58425DA31B4A983700461071 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				58425DA61B4A986100461071 /* xib */,
 				58425DA41B4A984700461071 /* ArticleTableviewCell.swift */,
 			);
 			name = view;
@@ -159,6 +160,14 @@
 			name = model;
 			sourceTree = "<group>";
 		};
+		585466DC1B577726000D00D1 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				58B6FE551B4CA10200AB159B /* ArticleTableManager.swift */,
+			);
+			name = delegate;
+			sourceTree = "<group>";
+		};
 		587DB5261B4A953C00956D85 = {
 			isa = PBXGroup;
 			children = (
@@ -185,10 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				584035491B4BAB1D009D39FA /* helper */,
-				58425DB01B4A9EFB00461071 /* model */,
 				58425DA91B4A989100461071 /* protocol */,
+				58425DB01B4A9EFB00461071 /* model */,
 				58DD1BE31B4A968A005FACE9 /* manager */,
-				58425DA61B4A986100461071 /* xib */,
 				58425DA31B4A983700461071 /* view */,
 				58DD1BE01B4A9656005FACE9 /* controller */,
 				587DB5321B4A953C00956D85 /* AppDelegate.swift */,
@@ -236,6 +244,7 @@
 		58DD1BE01B4A9656005FACE9 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				585466DC1B577726000D00D1 /* delegate */,
 				5807812A1B4AF83100D00C9F /* SortTableViewCtrl.swift */,
 				58425DAE1B4A9CD300461071 /* ArticleContentCtrl.swift */,
 				58DD1BE11B4A966D005FACE9 /* ArticleListCtrl.swift */,
@@ -246,7 +255,6 @@
 		58DD1BE31B4A968A005FACE9 /* manager */ = {
 			isa = PBXGroup;
 			children = (
-				58B6FE551B4CA10200AB159B /* ArticleTableManager.swift */,
 				58DD1BE41B4A9694005FACE9 /* Api.swift */,
 				58425DAC1B4A9CA800461071 /* Core.swift */,
 			);

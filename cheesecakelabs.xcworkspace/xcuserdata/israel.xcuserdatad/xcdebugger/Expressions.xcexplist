@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "cheesecakelabs.ArticleTableManager.tableView (cheesecakelabs.ArticleTableManager)(ObjectiveC.UITableView, cellForRowAtIndexPath : ObjectiveC.NSIndexPath) -&gt; ObjectiveC.UITableViewCell:ArticleTableManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "cheesecakelabs.ArticleListCrl.viewDidLoad (cheesecakelabs.ArticleListCrl)() -&gt; ():ArticleListCtrl.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

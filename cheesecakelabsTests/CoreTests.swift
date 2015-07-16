@@ -48,7 +48,7 @@ class CoreTests: XCTestCase {
         mockApi.setFullArticles()
         let articleArray = mockApi.getArticlesForCoreData()
         CORE.createData(articleArray)
-        var article = CORE.retriveData("website")
+        let article = CORE.retriveData("website")
         CORE.deleteData((article?.first)!)
         CORE.deleteData((article?.last)!)
         XCTAssertTrue(CORE.retriveData("website")!.count == 0)

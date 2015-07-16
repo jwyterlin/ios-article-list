@@ -71,6 +71,7 @@ class ArticleListCrl: UIViewController, ArticleTabManagerProc, ApiProc, UIPopove
         ]
         
         /**
+        TODO:
         Avoid crash in iPads when presenting UIActivityViewController
         */
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Phone)
